@@ -39,3 +39,4 @@ For generating all the testing samples from a category of ShapeNet Core Dataset,
 ```bash
 python sdf2obj.py --category chair --ckpt 30 --batch_size 4 -g 0,1
 ```
+The generated mesh files will be stored at  ```./test/results/30/test_objs/...```. 
