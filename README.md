@@ -1,3 +1,5 @@
+<img src='fig/sp.gif' align="right" width=325>
+<br><br><br>
 
 ## Neural Implicit 3D Shapes from Single Images with Spatial Patterns
 
@@ -5,37 +7,38 @@ This repository provides PyTorch implementation of our paper:
 
 [Neural Implicit 3D Shapes from Single Images with Spatial Patterns](https://arxiv.org/abs/)
 
-<img src="./fig/result.png" width="700" />
+<img src="./fig/result.png" width="500" />
 
-### Prerequisites
+
+### Installation
+- Clone this repo:
+```bash
+git clone https://github.com/yixin26/SVR-SP.git
+cd SVR-SP
+```
+
+#### Prerequisites
 - Python 3.6
 - CPU or NVIDIA GPU + CUDA CuDNN
 - Pytorch > (1.4.x)
 
-Install dependencies:
-```bash
-pip install -r requirements.txt
-```
+#### Install dependencies
+Install via conda environment `conda env create -f environment.yml` (creates an environment called svrsp)
+
 
 ### Run
 
-For a quick demo, please use the pre-trained model. The pretrained model can be downloaded from [Google Drive](https://drive.google.com/file/d/1gLNrlg0NLG6VndslWMTRZqU6ZqV9P-ax/view?usp=sharing).
-
-```bash
-python test.py -i test/a.png -o test/a.obj --batch_size 4 -g 0,1 
-```
-The option `-i` and `-o` dictates the input and output path respectively.
+For a quick demo, please use the pre-trained model. The pretrained model can be downloaded from [Google Drive](https://drive.google.com/file/d/1gLNrlg0NLG6VndslWMTRZqU6ZqV9P-ax/view?usp=sharing),
+and exact the file to test/model.
 
 For generating all the testing samples from a category of ShapeNet Core Dataset, e.g., Chair, please use
 
 ```bash
-python sdf2obj.py --category chair --ckpt xxx --batch_size 4 -g 0,1
+python sdf2obj.py --category chair --ckpt 30 --batch_size 4 -g 0,1
 ```
 
-
-### Method  - Spatial Patterns
+### Method
 <img src="./fig/network.png" width="700" />
-<img src="./fig/sp.gif" width="400" />
 
 
 
