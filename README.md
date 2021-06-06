@@ -1,4 +1,4 @@
-<img src='fig/sp.gif' align="right" width=325>
+<img src='fig/sp.gif' align="right" width=225>
 <br><br><br>
 
 ## Neural Implicit 3D Shapes from Single Images with Spatial Patterns
@@ -7,14 +7,14 @@ This repository provides PyTorch implementation of our paper:
 
 [Neural Implicit 3D Shapes from Single Images with Spatial Patterns](https://arxiv.org/abs/)
 
-<img src="./fig/result.png" width="500" />
+<img src="./fig/result.png" width="700" />
 
 
 ### Installation
 - Clone this repo:
 ```bash
 git clone https://github.com/yixin26/SVR-SP.git
-cd SVR-SP
+cd SVR-SP & cd code
 ```
 
 #### Prerequisites
@@ -37,11 +37,7 @@ For generating all the testing samples from a category of ShapeNet Core Dataset,
 python sdf2obj.py --category chair --ckpt 30 --batch_size 4 -g 0,1
 ```
 
-### Method
-<img src="./fig/network.png" width="700" />
-
-
-
+As to create meshes from the SDFs, we use the executable file from [DISN/isosurface](https://github.com/laughtervv/DISN).
 
 
 
