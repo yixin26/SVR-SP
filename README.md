@@ -19,7 +19,7 @@ pip install -r requirements.txt
 
 ### Run
 
-For a quick demo, please use the pre-trained model. The pretrained model can be downloaded from [Google Drive](https://drive.google.com/drive/..).
+For a quick demo, please use the pre-trained model. The pretrained model can be downloaded from [Google Drive](https://drive.google.com/file/d/1gLNrlg0NLG6VndslWMTRZqU6ZqV9P-ax/view?usp=sharing).
 
 ```bash
 python test.py -i test/a.png -o test/a.obj --batch_size 4 -g 0,1 
