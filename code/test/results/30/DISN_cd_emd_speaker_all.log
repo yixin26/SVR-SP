@@ -1,0 +1,368 @@
+nohup: ignoring input
+WARNING:tensorflow:
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+pid: 24656
+Namespace(alpha=False, batch_size=24, binary=False, cal_dir='/mnt/disk7/yixin/svr_sketch/unambi-point-rep-ablat-all/all/results/30/test_objs/65_0.0', cam_est=False, cat_limit=168000, category='speaker', decay_rate=0.9, decay_step=200000, gpu='3', img_feat_onestream=False, img_feat_twostream=True, img_h=137, img_w=137, learning_rate=0.0001, log_dir='/mnt/disk7/yixin/svr_sketch/unambi-point-rep-ablat-all/all/results/30', max_epoch=1, num_classes=1024, num_points=1, num_sample_points=2048, rot=False, sdf_res=64, store=False, tanh=False, test_lst_dir='./data/filelists', threedcnn=False, view_num=24)
+{'rendered_dir': '/mnt/disk7/yixin/DISN/data_used/ShapeNetRenderingh5_v1', 'sdf_dir': '/mnt/disk7/yixin/data/ShapeNet/SDF_v1/', 'gt_marching_cube': '/mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1'}
+WARNING:tensorflow:From test/test_cd_emd.py:230: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:From test/test_cd_emd.py:234: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+2021-05-23 13:16:56.289192: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2021-05-23 13:16:56.320489: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2199930000 Hz
+2021-05-23 13:16:56.323372: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x559463783f00 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-05-23 13:16:56.323414: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2021-05-23 13:16:56.325142: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2021-05-23 13:16:56.457780: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties: 
+name: TITAN Xp major: 6 minor: 1 memoryClockRate(GHz): 1.582
+pciBusID: 0000:07:00.0
+2021-05-23 13:16:56.458086: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2021-05-23 13:16:56.459665: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2021-05-23 13:16:56.461028: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10.0
+2021-05-23 13:16:56.461357: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10.0
+2021-05-23 13:16:56.463221: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2021-05-23 13:16:56.464615: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10.0
+2021-05-23 13:16:56.469028: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-05-23 13:16:56.478846: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2021-05-23 13:16:56.478916: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2021-05-23 13:16:56.715645: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-05-23 13:16:56.715695: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0 
+2021-05-23 13:16:56.715706: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N 
+2021-05-23 13:16:56.727424: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11436 MB memory) -> physical GPU (device: 0, name: TITAN Xp, pci bus id: 0000:07:00.0, compute capability: 6.1)
+2021-05-23 13:16:56.730494: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x559464255140 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2021-05-23 13:16:56.730520: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): TITAN Xp, Compute Capability 6.1
+WARNING:tensorflow:From test/test_cd_emd.py:235: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+(24, 2048, 3)
+(24, 2048, 3)
+cf_loss_views.get_shape() <unknown>
+match_cost.get_shape() <unknown>
+1  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/8c18ef2a9170a8144884161c20b458b0/isosurf.obj avg cf:14.401345, min_cf:5.0504932, arg_cf view:7, avg emd:3.382825, min_emd:2.3030264, arg_em view:6
+2  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/7ba65164444ed5be3df08ed7d70af1ee/isosurf.obj avg cf:16.38362, min_cf:7.2651906, arg_cf view:23, avg emd:3.6965973, min_emd:3.1203837, arg_em view:12
+3  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/710014b815369e1c2bcea2cd4cc7b042/isosurf.obj avg cf:8.232636, min_cf:7.2491317, arg_cf view:7, avg emd:2.66634, min_emd:2.2725883, arg_em view:15
+4  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/3e21834bd08c078963de47aaa413f122/isosurf.obj avg cf:8.466737, min_cf:4.3149495, arg_cf view:12, avg emd:2.9146736, min_emd:2.127316, arg_em view:12
+5  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/767f4a63260c8419e279011f622f20b0/isosurf.obj avg cf:3.1186688, min_cf:1.086277, arg_cf view:19, avg emd:1.6864239, min_emd:1.0301056, arg_em view:16
+6  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/bae089bd1855bcdcfa9922db9b6aab31/isosurf.obj avg cf:2.3467948, min_cf:2.155169, arg_cf view:18, avg emd:1.729051, min_emd:1.4728023, arg_em view:6
+7  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/4b29063d6237b062eabe53d90550c4a6/isosurf.obj avg cf:4.2091007, min_cf:1.9980823, arg_cf view:20, avg emd:2.1390061, min_emd:1.4423951, arg_em view:5
+8  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/2335c268bbd05a5f230584014222e685/isosurf.obj avg cf:2.5831525, min_cf:1.8325402, arg_cf view:4, avg emd:1.5561934, min_emd:1.319725, arg_em view:12
+9  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/2a6f78d39d66f6171bd445ab4c056b71/isosurf.obj avg cf:13.545853, min_cf:11.512597, arg_cf view:12, avg emd:3.5575593, min_emd:2.814619, arg_em view:12
+10  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/8b73786c112d262d4852385de47501f6/isosurf.obj avg cf:5.623427, min_cf:1.9605846, arg_cf view:17, avg emd:2.0615973, min_emd:1.4847294, arg_em view:2
+11  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/7e63f06b3c48fadfd6d49cce41472b6e/isosurf.obj avg cf:9.276373, min_cf:6.9970713, arg_cf view:6, avg emd:2.7334602, min_emd:2.09252, arg_em view:20
+12  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/b0f209faa41b8f0879da6431b0766445/isosurf.obj avg cf:8.585612, min_cf:2.257988, arg_cf view:6, avg emd:2.5871508, min_emd:1.7396933, arg_em view:6
+13  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/2f4e9cc37c3bf5f1fdd84f4a160b8854/isosurf.obj avg cf:2.6001942, min_cf:1.5715123, arg_cf view:3, avg emd:1.8239183, min_emd:1.3518322, arg_em view:8
+14  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/460d5cc9d09ec59eb34ed614d2670aca/isosurf.obj avg cf:4.2573485, min_cf:3.0054333, arg_cf view:7, avg emd:2.3970587, min_emd:2.0298483, arg_em view:11
+15  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/af7aded6c26d2b119d3f10ce46ef328c/isosurf.obj avg cf:2.5673056, min_cf:1.5475286, arg_cf view:23, avg emd:1.7334346, min_emd:1.3194362, arg_em view:4
+16  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/1b31f250deb7e124fae32a4a57dfb78/isosurf.obj avg cf:12.320159, min_cf:3.0306623, arg_cf view:4, avg emd:2.9039364, min_emd:1.8161346, arg_em view:4
+17  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/3b3f46308f2ad119988b934ce1e16bb7/isosurf.obj avg cf:3.3001165, min_cf:2.7807133, arg_cf view:19, avg emd:2.748539, min_emd:1.9719687, arg_em view:21
+18  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/5f3436d8bb1620f4617146ea341ca085/isosurf.obj avg cf:5.8012867, min_cf:2.1509085, arg_cf view:3, avg emd:2.3086767, min_emd:1.6025558, arg_em view:23
+19  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/f6d4918c7dd190447f45370489ca3156/isosurf.obj avg cf:7.7583976, min_cf:2.6588593, arg_cf view:20, avg emd:2.8167355, min_emd:1.919166, arg_em view:3
+20  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/7578b2e27851b989a374ee921da07aaa/isosurf.obj avg cf:6.004687, min_cf:3.2989645, arg_cf view:23, avg emd:2.2867506, min_emd:1.8324447, arg_em view:12
+21  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/300d579cb4dea9338cbc76a30015552a/isosurf.obj avg cf:12.265526, min_cf:5.524134, arg_cf view:8, avg emd:2.8992827, min_emd:2.0635571, arg_em view:8
+22  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/2034f891fe2d1e79bb51f8b36601764d/isosurf.obj avg cf:7.5602784, min_cf:6.4569616, arg_cf view:0, avg emd:4.240994, min_emd:3.625974, arg_em view:10
+23  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/f0d27525fa81798d982acd4b5c0a58b0/isosurf.obj avg cf:14.34023, min_cf:7.7249513, arg_cf view:17, avg emd:3.9768827, min_emd:3.1823082, arg_em view:2
+24  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/aede81c0789358891ae45cdab702386a/isosurf.obj avg cf:6.6086617, min_cf:4.201799, arg_cf view:5, avg emd:3.067732, min_emd:2.2621737, arg_em view:18
+25  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/8675e32f2e122ea5c13bcab6e4ecd7e4/isosurf.obj avg cf:10.627837, min_cf:4.6950574, arg_cf view:14, avg emd:3.0866997, min_emd:2.6296563, arg_em view:3
+26  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/17c472a6899c92efcf39ad4726172e1d/isosurf.obj avg cf:15.033439, min_cf:7.98193, arg_cf view:19, avg emd:3.5047646, min_emd:2.8023095, arg_em view:19
+27  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/ac951c58cd826af6a89585af9e32f3d7/isosurf.obj avg cf:13.029035, min_cf:7.1355944, arg_cf view:15, avg emd:3.3711517, min_emd:2.470542, arg_em view:16
+28  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/35982cb980f6916c2633ff66beb9cf31/isosurf.obj avg cf:6.5605226, min_cf:2.575223, arg_cf view:3, avg emd:2.26038, min_emd:1.6425143, arg_em view:14
+29  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/132257fddbebc02ff14235268cca03a3/isosurf.obj avg cf:10.15263, min_cf:6.3287835, arg_cf view:4, avg emd:3.0463827, min_emd:2.4923015, arg_em view:8
+30  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/1e82e94cf9f6bda8fe893ed5dfb6041d/isosurf.obj avg cf:4.8295913, min_cf:3.5462341, arg_cf view:7, avg emd:2.08761, min_emd:1.7167678, arg_em view:21
+31  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/1301670e3ddb72b099284d844aba7576/isosurf.obj avg cf:6.8669906, min_cf:3.6149113, arg_cf view:14, avg emd:3.4616883, min_emd:2.2654145, arg_em view:13
+32  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/4793c0b78701e47dd529f6660fe10a17/isosurf.obj avg cf:3.0505135, min_cf:1.7659608, arg_cf view:13, avg emd:2.0984342, min_emd:1.5900292, arg_em view:15
+33  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/33d9a210df86a437cb3c1170309e6b12/isosurf.obj avg cf:18.06955, min_cf:9.609248, arg_cf view:21, avg emd:3.4899216, min_emd:2.746917, arg_em view:21
+34  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/6be15f4f6dd64490d747b49524a1246e/isosurf.obj avg cf:9.382261, min_cf:4.5713882, arg_cf view:10, avg emd:2.6036673, min_emd:2.0157838, arg_em view:10
+35  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/85eb14c504232ad1bb36a678453013a7/isosurf.obj avg cf:8.319718, min_cf:5.0044374, arg_cf view:6, avg emd:2.7850482, min_emd:2.0987496, arg_em view:12
+36  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/f0e562c21dfcaaa1d1936ff8c5fb2337/isosurf.obj avg cf:8.431416, min_cf:4.1514993, arg_cf view:21, avg emd:3.2003806, min_emd:2.5036578, arg_em view:0
+37  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/2aad0ff91e947e64baf402ca36cbac3b/isosurf.obj avg cf:16.022776, min_cf:5.4611683, arg_cf view:12, avg emd:3.357032, min_emd:2.3866796, arg_em view:12
+38  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/57b8d08d37d835995d0dded52efeb4fd/isosurf.obj avg cf:3.3140776, min_cf:2.1772316, arg_cf view:12, avg emd:1.938591, min_emd:1.6787118, arg_em view:18
+39  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/c462e3b75f570a3b42227a2ba4dff5ab/isosurf.obj avg cf:3.4224079, min_cf:2.3396728, arg_cf view:18, avg emd:2.7222402, min_emd:1.5845071, arg_em view:18
+40  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/8dfa9921e51e0fa3f99860cd321d6c67/isosurf.obj avg cf:8.12569, min_cf:3.6250105, arg_cf view:7, avg emd:2.927492, min_emd:1.6034863, arg_em view:7
+41  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/10e079ff34f99777bcb3fc1376c3a85d/isosurf.obj avg cf:10.397368, min_cf:8.289243, arg_cf view:12, avg emd:3.0509617, min_emd:2.7113554, arg_em view:23
+42  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/a1d1f232168607c81dd4da6e97c175c2/isosurf.obj avg cf:8.258156, min_cf:6.038614, arg_cf view:0, avg emd:2.8419454, min_emd:2.4129617, arg_em view:0
+43  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/60575cff5db034c621e6f308016fab7/isosurf.obj avg cf:5.867124, min_cf:3.5885885, arg_cf view:16, avg emd:2.0978048, min_emd:1.6773837, arg_em view:5
+44  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/5da2a1ae6ec64155dc7dfac1f2c9f0d4/isosurf.obj avg cf:8.275434, min_cf:4.0674458, arg_cf view:2, avg emd:2.6845722, min_emd:2.1334598, arg_em view:2
+45  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/cc88df1c3cfac12a99db62650613bd48/isosurf.obj avg cf:11.990196, min_cf:9.48884, arg_cf view:17, avg emd:3.3726854, min_emd:2.7632778, arg_em view:17
+46  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/622a9789d1eaf6e3cf56355417e88d12/isosurf.obj avg cf:7.663311, min_cf:3.7895691, arg_cf view:3, avg emd:3.0013325, min_emd:2.077688, arg_em view:0
+47  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/92039123d08d8ad6adbfb30d8d1b297e/isosurf.obj avg cf:12.737827, min_cf:7.98738, arg_cf view:12, avg emd:3.4948447, min_emd:2.6918206, arg_em view:16
+48  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/4c43241d7b30eee379e6d136097a1329/isosurf.obj avg cf:3.7304814, min_cf:2.205611, arg_cf view:17, avg emd:2.0730975, min_emd:1.7213778, arg_em view:11
+49  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/76007907d4e0ae438c2ccb23eb70d81c/isosurf.obj avg cf:6.9173675, min_cf:3.8976138, arg_cf view:4, avg emd:3.0289192, min_emd:2.3678718, arg_em view:4
+50  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/4383b2bbce729356a9c2f34ef56404ef/isosurf.obj avg cf:8.957677, min_cf:2.6478195, arg_cf view:7, avg emd:3.5677807, min_emd:2.5808558, arg_em view:15
+51  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/9a94af940a768aee5865ac92cffc2982/isosurf.obj avg cf:5.161226, min_cf:3.0918732, arg_cf view:1, avg emd:2.1773846, min_emd:1.7672607, arg_em view:10
+52  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/8c7c72599c6bbafc8323fc17a8352c3d/isosurf.obj avg cf:5.3820662, min_cf:4.568331, arg_cf view:4, avg emd:2.3763535, min_emd:1.9695104, arg_em view:13
+53  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/2c5dde3b43f0b0fc5afcf0aaed5d73d0/isosurf.obj avg cf:15.318912, min_cf:4.6264215, arg_cf view:6, avg emd:3.0927932, min_emd:2.263118, arg_em view:6
+54  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/1445e30aa2d3212db6a78dbbcf2e408/isosurf.obj avg cf:2.844669, min_cf:1.8402617, arg_cf view:5, avg emd:1.9184421, min_emd:1.4923643, arg_em view:16
+55  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/d7233f2190432638d747b49524a1246e/isosurf.obj avg cf:4.741371, min_cf:3.517422, arg_cf view:9, avg emd:2.1701708, min_emd:1.8607434, arg_em view:2
+56  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/54e61267b88174967bc8772c5c1a0c19/isosurf.obj avg cf:10.857423, min_cf:5.51711, arg_cf view:7, avg emd:2.7050467, min_emd:2.154963, arg_em view:7
+57  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/d14e6214d7dd4ed62d563c85edb49108/isosurf.obj avg cf:13.699079, min_cf:8.77777, arg_cf view:23, avg emd:3.4214814, min_emd:2.8451018, arg_em view:11
+58  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/596f7a94c6d1443870896ebcdb67d8d7/isosurf.obj avg cf:8.417786, min_cf:3.8467436, arg_cf view:20, avg emd:2.7208579, min_emd:1.9806219, arg_em view:20
+59  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/a6453864512f46dd747b49524a1246e/isosurf.obj avg cf:5.194623, min_cf:3.0836322, arg_cf view:17, avg emd:2.2284253, min_emd:1.7768109, arg_em view:18
+60  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/5c4964d7c42cf84bdd9ef3991bf7600e/isosurf.obj avg cf:12.45354, min_cf:7.7533855, arg_cf view:5, avg emd:3.1521547, min_emd:2.7009234, arg_em view:5
+61  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/84adc06696eea1774a2b8524bd5c98/isosurf.obj avg cf:9.007869, min_cf:5.010485, arg_cf view:20, avg emd:2.768542, min_emd:2.1480968, arg_em view:1
+62  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/3b01bd24d47245289159eab9ccaa73ce/isosurf.obj avg cf:14.059104, min_cf:2.0587492, arg_cf view:8, avg emd:2.797372, min_emd:1.6555951, arg_em view:12
+63  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/e1be0b02973011aa4c5341ee07f41676/isosurf.obj avg cf:2.9908407, min_cf:2.0397077, arg_cf view:4, avg emd:1.8867769, min_emd:1.4285774, arg_em view:12
+64  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/fa2cf860e277919a7445d25f394949d0/isosurf.obj avg cf:3.2340393, min_cf:2.6385262, arg_cf view:17, avg emd:1.8604847, min_emd:1.5502728, arg_em view:4
+65  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/ff9c1754252b9ebf73c7253ec9acd58b/isosurf.obj avg cf:17.570324, min_cf:3.9434795, arg_cf view:2, avg emd:3.80944, min_emd:2.019112, arg_em view:2
+66  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/2f7b5ea50c09d928b23f3e90fedcfa3/isosurf.obj avg cf:11.4733095, min_cf:5.4319015, arg_cf view:15, avg emd:3.0684807, min_emd:2.4072092, arg_em view:7
+67  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/2325005b09d12b2585d624cfcd9a37a7/isosurf.obj avg cf:3.4802284, min_cf:2.4420662, arg_cf view:2, avg emd:2.0326498, min_emd:1.6909466, arg_em view:22
+68  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/2240cfeefea8b69fb90623b288d5691f/isosurf.obj avg cf:7.54705, min_cf:4.4753747, arg_cf view:7, avg emd:2.5289953, min_emd:1.9732766, arg_em view:19
+69  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/496aea93dd8f7af1f3f18c4c348425c1/isosurf.obj avg cf:5.619741, min_cf:2.5702357, arg_cf view:6, avg emd:2.4182408, min_emd:1.8415792, arg_em view:6
+70  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/9b4d3ead5066a6c5844e9c5caa6d29c6/isosurf.obj avg cf:6.7759767, min_cf:2.4140413, arg_cf view:14, avg emd:2.5040882, min_emd:1.6934615, arg_em view:1
+71  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/2daca96a8e202949c67b8955be358784/isosurf.obj avg cf:9.152583, min_cf:6.0135016, arg_cf view:12, avg emd:2.8207781, min_emd:2.3218484, arg_em view:19
+72  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/fd11b075bb1df4b01f1c09aefb59ebea/isosurf.obj avg cf:6.0747437, min_cf:3.5117753, arg_cf view:5, avg emd:2.276412, min_emd:1.8698483, arg_em view:1
+73  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/d09f0e2e33452a739d3f10ce46ef328c/isosurf.obj avg cf:2.6060135, min_cf:1.6815155, arg_cf view:1, avg emd:1.8705187, min_emd:1.2880344, arg_em view:11
+74  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/716d1d38cc0bcdc8c9d5b08933b9e0c1/isosurf.obj avg cf:6.237187, min_cf:3.7805057, arg_cf view:15, avg emd:2.4537098, min_emd:2.0362825, arg_em view:19
+75  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/400fb89ed6cc3d2bf1acfa9a5200e941/isosurf.obj avg cf:14.939723, min_cf:2.9592674, arg_cf view:3, avg emd:3.5534248, min_emd:2.1713614, arg_em view:3
+76  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/af39a67dea9ff78bf46f716b2b22b550/isosurf.obj avg cf:7.5721626, min_cf:2.9800994, arg_cf view:21, avg emd:2.7651808, min_emd:1.9396108, arg_em view:18
+77  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/1742419bf5a54be3e1a894502fdbf97b/isosurf.obj avg cf:9.863757, min_cf:5.2811866, arg_cf view:9, avg emd:3.6254663, min_emd:2.6394427, arg_em view:15
+78  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/4d276aacd5e4c510de7da340cde8d034/isosurf.obj avg cf:10.562038, min_cf:5.022905, arg_cf view:16, avg emd:2.913222, min_emd:2.0791435, arg_em view:5
+79  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/c8018ed73c5f4087eb927391bdd6c8e8/isosurf.obj avg cf:10.764617, min_cf:1.6504998, arg_cf view:18, avg emd:2.991586, min_emd:1.7854006, arg_em view:19
+80  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/6ab218aba38bdada2268dda5c324173f/isosurf.obj avg cf:4.0726314, min_cf:2.6565478, arg_cf view:20, avg emd:2.0821173, min_emd:1.6796728, arg_em view:2
+81  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/cfdd69078d7752298b54295fac36ff1b/isosurf.obj avg cf:10.378633, min_cf:2.9660084, arg_cf view:19, avg emd:2.7578895, min_emd:1.9371063, arg_em view:1
+82  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/fff40d102ca88fdb52648dc23b25b1d/isosurf.obj avg cf:5.448677, min_cf:3.553836, arg_cf view:19, avg emd:2.233504, min_emd:1.6391575, arg_em view:15
+83  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/5e6d30de53afebe2fb0a4dd466ef3d66/isosurf.obj avg cf:3.4841366, min_cf:2.0013635, arg_cf view:5, avg emd:2.011135, min_emd:1.4569293, arg_em view:5
+84  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/fe977bebc78501995996c3a82deb78d6/isosurf.obj avg cf:7.0840664, min_cf:2.7324967, arg_cf view:20, avg emd:2.6585705, min_emd:1.731421, arg_em view:20
+85  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/86f45d4bb1f5f8597a040c8bcae232df/isosurf.obj avg cf:7.589044, min_cf:6.330317, arg_cf view:2, avg emd:3.2747605, min_emd:2.6016617, arg_em view:15
+86  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/8629dacee484080c7ad11885dccb6f43/isosurf.obj avg cf:18.166954, min_cf:8.6691475, arg_cf view:3, avg emd:4.0209556, min_emd:2.746662, arg_em view:9
+87  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/5584bebdc80ecb42c9d5b08933b9e0c1/isosurf.obj avg cf:7.677241, min_cf:3.9424574, arg_cf view:3, avg emd:2.4553611, min_emd:1.876831, arg_em view:23
+88  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/cf0da3cd69392999da2140846c49e200/isosurf.obj avg cf:21.219011, min_cf:8.242256, arg_cf view:22, avg emd:3.9798136, min_emd:2.80567, arg_em view:10
+89  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/bb570a28a0e81a51d747b49524a1246e/isosurf.obj avg cf:5.9666524, min_cf:1.543632, arg_cf view:7, avg emd:2.1287124, min_emd:1.3750943, arg_em view:2
+90  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/93c5159d17de18f02899849b3f61c3c5/isosurf.obj avg cf:11.854343, min_cf:8.036407, arg_cf view:11, avg emd:3.5936947, min_emd:2.934707, arg_em view:23
+91  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/3636ebcd2e5568616bb15da9e307a14/isosurf.obj avg cf:4.666068, min_cf:2.4908829, arg_cf view:19, avg emd:2.1860745, min_emd:1.6105604, arg_em view:3
+92  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/6341662056860c3e225f3f0d46b4fca3/isosurf.obj avg cf:10.52164, min_cf:5.698353, arg_cf view:20, avg emd:3.5813322, min_emd:2.8269744, arg_em view:16
+93  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/6ef86253eb81e4d418200338a176d705/isosurf.obj avg cf:2.5384893, min_cf:1.5766497, arg_cf view:19, avg emd:1.6640049, min_emd:1.3585817, arg_em view:19
+94  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/48bf5d4693bb7ecfb4bf1edf2dd92af/isosurf.obj avg cf:10.441321, min_cf:4.682321, arg_cf view:12, avg emd:3.1720607, min_emd:2.1171274, arg_em view:2
+95  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/f6954ca2e4c2b03c67b2ae8c967fcba0/isosurf.obj avg cf:16.128439, min_cf:7.1384244, arg_cf view:12, avg emd:3.4011164, min_emd:2.631922, arg_em view:12
+96  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/7a7193771ada6796a1b0d9ebe362f8f3/isosurf.obj avg cf:9.824338, min_cf:5.48195, arg_cf view:3, avg emd:2.5258372, min_emd:1.8196576, arg_em view:4
+97  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/ef71576ad5262c4ef398d0c5832df00e/isosurf.obj avg cf:6.6166286, min_cf:3.954025, arg_cf view:13, avg emd:2.4185672, min_emd:1.9459964, arg_em view:22
+98  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/b859938280d0c7346583871b5c274818/isosurf.obj avg cf:2.466451, min_cf:1.1808958, arg_cf view:16, avg emd:2.0535104, min_emd:1.3346009, arg_em view:4
+99  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/913eb13149ceb59a75a3010d3ada28ba/isosurf.obj avg cf:15.767062, min_cf:4.7950335, arg_cf view:15, avg emd:3.2872353, min_emd:2.1309671, arg_em view:15
+100  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/68393fdf9730d1c86e95461e6c2993ce/isosurf.obj avg cf:3.4123256, min_cf:1.9899765, arg_cf view:23, avg emd:1.8378199, min_emd:1.4130636, arg_em view:9
+101  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/4c5b7420078b23b098935bd14e27f0a5/isosurf.obj avg cf:3.3363, min_cf:2.432838, arg_cf view:3, avg emd:1.8887953, min_emd:1.5406299, arg_em view:3
+102  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/ea95cdbe8f4114107354c46aadb2b2fd/isosurf.obj avg cf:10.876255, min_cf:7.4264135, arg_cf view:16, avg emd:3.290191, min_emd:2.7124858, arg_em view:8
+103  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/1334b56706bddaf4451f278fffaaebae/isosurf.obj avg cf:8.405629, min_cf:4.450022, arg_cf view:16, avg emd:2.808382, min_emd:2.1329572, arg_em view:16
+104  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/d6f0a0ca6446eab0c0b5947ffe18a468/isosurf.obj avg cf:9.029378, min_cf:6.409941, arg_cf view:19, avg emd:2.9029179, min_emd:2.364279, arg_em view:11
+105  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/95c24657d2ac0469a3cd3bc808c81de5/isosurf.obj avg cf:9.813386, min_cf:7.5162263, arg_cf view:22, avg emd:3.546552, min_emd:2.9339435, arg_em view:0
+106  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/54fadd7a6c5c04d752560296120d4cb/isosurf.obj avg cf:2.5881746, min_cf:1.7642047, arg_cf view:13, avg emd:1.7244811, min_emd:1.3557422, arg_em view:8
+107  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/b93169c2360aa02ea14443313213c384/isosurf.obj avg cf:14.635021, min_cf:6.121778, arg_cf view:5, avg emd:4.2475305, min_emd:3.025354, arg_em view:5
+108  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/1788d15f49a57570a0402637f097180/isosurf.obj avg cf:8.011352, min_cf:3.0243602, arg_cf view:0, avg emd:2.6582654, min_emd:1.8659358, arg_em view:12
+109  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/8df018bf733ff01cf00aae52edb0b7b/isosurf.obj avg cf:10.030155, min_cf:4.9279633, arg_cf view:21, avg emd:2.6727104, min_emd:1.8623005, arg_em view:21
+110  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/b7285ba6fc6628a1a43ada367b02a4fb/isosurf.obj avg cf:1.9126467, min_cf:0.85646427, arg_cf view:6, avg emd:1.4166619, min_emd:1.0271976, arg_em view:20
+111  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/42fe49780429d25d1de55fee5ac2c5c2/isosurf.obj avg cf:3.1805513, min_cf:2.3900318, arg_cf view:13, avg emd:1.9270648, min_emd:1.7249396, arg_em view:19
+112  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/81b711a75b8781956faee4308b49b522/isosurf.obj avg cf:25.470175, min_cf:3.2675292, arg_cf view:16, avg emd:3.9688747, min_emd:2.0469224, arg_em view:13
+113  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/405db2cef5b41756fa16d3c3138134ae/isosurf.obj avg cf:5.5553145, min_cf:2.2974963, arg_cf view:5, avg emd:2.0898473, min_emd:1.6396078, arg_em view:11
+114  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/ed981b60651d5ad8265d1076b4b6c5c/isosurf.obj avg cf:6.3398232, min_cf:2.7124434, arg_cf view:2, avg emd:2.2497513, min_emd:1.6997247, arg_em view:1
+115  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/ecd9a96ebfd0caf6d8f9dd7647048a0c/isosurf.obj avg cf:3.9314098, min_cf:2.4896367, arg_cf view:6, avg emd:2.0982916, min_emd:1.6763079, arg_em view:8
+116  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/8aea25f1090e419c9f78b1e1185445c4/isosurf.obj avg cf:22.462442, min_cf:6.2780724, arg_cf view:19, avg emd:3.7984064, min_emd:2.4777546, arg_em view:7
+117  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/3c467fca7449a857a2b4d33761839e86/isosurf.obj avg cf:10.663453, min_cf:8.869572, arg_cf view:19, avg emd:3.4063246, min_emd:2.8434567, arg_em view:19
+118  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/f37f4ef72fd0204d839a84b4ae4862d3/isosurf.obj avg cf:5.1499734, min_cf:2.8647282, arg_cf view:4, avg emd:2.168917, min_emd:1.8041067, arg_em view:9
+119  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/39ade62ad13e3c79206861ce7df4037f/isosurf.obj avg cf:12.709282, min_cf:5.362236, arg_cf view:21, avg emd:3.2833536, min_emd:2.2309082, arg_em view:13
+120  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/90120bf8e84315de6873d49607c1f87/isosurf.obj avg cf:10.763511, min_cf:6.0729766, arg_cf view:5, avg emd:4.0397253, min_emd:2.9681523, arg_em view:5
+121  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/3cbeb01fae7fb6ec7238b5c2712646b7/isosurf.obj avg cf:3.636409, min_cf:2.7503831, arg_cf view:19, avg emd:2.2218854, min_emd:1.5731653, arg_em view:21
+122  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/a288498f21acdedb2a65278501cfbe7/isosurf.obj avg cf:2.362097, min_cf:1.9385949, arg_cf view:9, avg emd:1.7269682, min_emd:1.5032072, arg_em view:1
+123  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/19a8736130ef822b93dcf5e22ecc3f5e/isosurf.obj avg cf:4.2369933, min_cf:2.1848445, arg_cf view:23, avg emd:2.086108, min_emd:1.6261004, arg_em view:16
+124  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/10d03876d94ec5f4e7670ea63e6cabfd/isosurf.obj avg cf:13.799881, min_cf:2.6226602, arg_cf view:20, avg emd:2.8215027, min_emd:1.8394171, arg_em view:23
+125  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/c2024c0fa0906fc724abfaa350249967/isosurf.obj avg cf:5.166179, min_cf:2.5278368, arg_cf view:20, avg emd:2.2532163, min_emd:1.7798495, arg_em view:17
+126  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/c3733b26c3fa23ce2633ff66beb9cf31/isosurf.obj avg cf:15.552444, min_cf:10.610918, arg_cf view:1, avg emd:3.7545779, min_emd:3.3416588, arg_em view:15
+127  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/374df728f54322363b0edb55efd49670/isosurf.obj avg cf:11.148494, min_cf:8.337923, arg_cf view:18, avg emd:3.0603256, min_emd:2.5851238, arg_em view:12
+128  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/7b7904e3d5ac33a65afb688fc9d0c0/isosurf.obj avg cf:4.8711944, min_cf:2.591181, arg_cf view:17, avg emd:2.1447487, min_emd:1.5507327, arg_em view:17
+129  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/945805d18c0de73ae3e30e20ce3a5bf5/isosurf.obj avg cf:6.0039077, min_cf:2.5985744, arg_cf view:3, avg emd:2.6471164, min_emd:1.6983207, arg_em view:22
+130  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/71b4fb2d151a9d70fb0a4dd466ef3d66/isosurf.obj avg cf:8.487826, min_cf:5.6026917, arg_cf view:4, avg emd:2.8283675, min_emd:2.2261903, arg_em view:10
+131  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/6d28e2683df5f013c9d5b08933b9e0c1/isosurf.obj avg cf:6.0771675, min_cf:3.3869586, arg_cf view:0, avg emd:2.289095, min_emd:1.840433, arg_em view:16
+132  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/60d58e77382f081a69d22ff82177f51b/isosurf.obj avg cf:6.306025, min_cf:2.3306222, arg_cf view:17, avg emd:2.3231678, min_emd:1.6658987, arg_em view:8
+133  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/d233b0a03f171cef47e72126a394af4d/isosurf.obj avg cf:2.1064155, min_cf:1.3158765, arg_cf view:19, avg emd:1.6478618, min_emd:1.3534384, arg_em view:19
+134  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/6592d33f84263ef435cd53a06b1d2317/isosurf.obj avg cf:5.958921, min_cf:3.3017657, arg_cf view:13, avg emd:2.4942877, min_emd:1.8944556, arg_em view:17
+135  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/16ea8ecabd3f373bdef52d9b75805a83/isosurf.obj avg cf:7.1179643, min_cf:3.721349, arg_cf view:22, avg emd:2.3453553, min_emd:1.9824002, arg_em view:22
+136  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/85e8d20d51ce13cc7fbc060fd555478/isosurf.obj avg cf:4.589468, min_cf:3.2192621, arg_cf view:9, avg emd:3.3906758, min_emd:2.720954, arg_em view:14
+137  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/64aed24bbb7542c6afac285245c66df0/isosurf.obj avg cf:7.546381, min_cf:4.3184953, arg_cf view:10, avg emd:2.4467258, min_emd:2.0884585, arg_em view:2
+138  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/84cabb92bca7c3fdf2198539cbd3b69c/isosurf.obj avg cf:4.0227094, min_cf:2.6585698, arg_cf view:21, avg emd:2.177471, min_emd:1.7124515, arg_em view:5
+139  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/451f3d4fd10530b9d5a56ecdb5a1cd39/isosurf.obj avg cf:6.365255, min_cf:5.4058642, arg_cf view:18, avg emd:2.4129102, min_emd:2.1481245, arg_em view:6
+140  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/7263b5bed1c020d3fd8284eaee3b0fd/isosurf.obj avg cf:3.6122112, min_cf:2.3171732, arg_cf view:2, avg emd:2.1050618, min_emd:1.5644547, arg_em view:13
+141  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/fd421313164e2d7f1be6fffd725195b9/isosurf.obj avg cf:4.271993, min_cf:2.638294, arg_cf view:9, avg emd:2.0620072, min_emd:1.6573143, arg_em view:10
+142  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/164bf28ed57e29a6293982b5acb5446c/isosurf.obj avg cf:5.384886, min_cf:2.500542, arg_cf view:8, avg emd:2.6757233, min_emd:2.0280402, arg_em view:8
+143  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/ac27fec4b0460b00318a4feb4ab5fd2b/isosurf.obj avg cf:4.4144173, min_cf:2.987381, arg_cf view:0, avg emd:2.2346847, min_emd:1.5862484, arg_em view:10
+144  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/fb60dd3c36439d836d74ed7e4da4b6ec/isosurf.obj avg cf:8.92671, min_cf:6.4497833, arg_cf view:18, avg emd:2.7042115, min_emd:2.2265918, arg_em view:1
+145  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/6450e70e275a80e0e39b302b17f4c82d/isosurf.obj avg cf:5.243317, min_cf:1.9298987, arg_cf view:18, avg emd:2.113392, min_emd:1.4089686, arg_em view:18
+146  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/1124d162420a75232633ff66beb9cf31/isosurf.obj avg cf:4.819576, min_cf:2.8076751, arg_cf view:12, avg emd:2.0516503, min_emd:1.7704408, arg_em view:0
+147  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/91f570ca6702fe4abd1cba733b111584/isosurf.obj avg cf:15.647911, min_cf:9.58583, arg_cf view:17, avg emd:3.831728, min_emd:3.2602582, arg_em view:7
+148  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/fae47d104b9111aafd949ebbd292d47/isosurf.obj avg cf:8.379403, min_cf:3.5504541, arg_cf view:11, avg emd:3.3022718, min_emd:1.7147125, arg_em view:11
+149  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/1152c16d1081c32a561e8b31a1141890/isosurf.obj avg cf:7.642204, min_cf:3.7107494, arg_cf view:3, avg emd:2.5533104, min_emd:1.8361828, arg_em view:11
+150  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/7599541dac4a89ada1efd4f01acbedc/isosurf.obj avg cf:7.589686, min_cf:2.1953006, arg_cf view:3, avg emd:2.3014016, min_emd:1.5275925, arg_em view:22
+151  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/a8f3e98220f34623b3d8c1107f6ae528/isosurf.obj avg cf:6.1754456, min_cf:3.0807705, arg_cf view:17, avg emd:2.590452, min_emd:1.894678, arg_em view:4
+152  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/c2bf199ce5a022a1126d510cb8dd3d9e/isosurf.obj avg cf:12.938991, min_cf:2.5003603, arg_cf view:3, avg emd:2.6397145, min_emd:1.7534299, arg_em view:1
+153  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/7e359607ecf460f399372ee1e6dff278/isosurf.obj avg cf:5.00114, min_cf:2.1016114, arg_cf view:22, avg emd:2.1890428, min_emd:1.6430105, arg_em view:13
+154  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/48c21ec6f9623c997ededbc2b9b4362a/isosurf.obj avg cf:11.237288, min_cf:3.3310685, arg_cf view:10, avg emd:2.5853002, min_emd:1.7571113, arg_em view:23
+155  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/440745e23b80c41f398d0c5832df00e/isosurf.obj avg cf:3.689057, min_cf:2.269717, arg_cf view:21, avg emd:2.2114701, min_emd:1.7764257, arg_em view:5
+156  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/2a59accd6ff9b5265c38e15d823f1476/isosurf.obj avg cf:9.40094, min_cf:5.4613314, arg_cf view:8, avg emd:2.613621, min_emd:1.997517, arg_em view:9
+157  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/fa09acded526a0105b1433436fd82800/isosurf.obj avg cf:3.672703, min_cf:1.8589485, arg_cf view:7, avg emd:1.9768034, min_emd:1.5007287, arg_em view:14
+158  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/7d2bd4d349ae34a2fcefa74f1d0bc6e6/isosurf.obj avg cf:9.4727335, min_cf:7.144495, arg_cf view:20, avg emd:4.025875, min_emd:3.2075012, arg_em view:19
+159  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/f289aadb7cdf59daa62fb160d742c45/isosurf.obj avg cf:8.915943, min_cf:4.4599104, arg_cf view:21, avg emd:4.059686, min_emd:2.5358672, arg_em view:21
+160  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/9a017f96829a34a2b17f090763e2921e/isosurf.obj avg cf:6.8224654, min_cf:3.9906454, arg_cf view:12, avg emd:2.463093, min_emd:1.849244, arg_em view:12
+161  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/cb356bbfb74abea2c6573f6ede3fd543/isosurf.obj avg cf:9.2646265, min_cf:2.2204342, arg_cf view:23, avg emd:2.6910036, min_emd:1.6726592, arg_em view:22
+162  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/560a626f93c664ff9069c2d361390698/isosurf.obj avg cf:20.443392, min_cf:7.1275535, arg_cf view:23, avg emd:3.6375978, min_emd:2.0834541, arg_em view:7
+163  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/99dce9c359b0bf4afb33d0031815b3e6/isosurf.obj avg cf:7.1782393, min_cf:5.593763, arg_cf view:3, avg emd:2.448467, min_emd:2.0218801, arg_em view:13
+164  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/2b3e7da84b849a84d3dbdb797d2f78b5/isosurf.obj avg cf:8.992066, min_cf:7.2507477, arg_cf view:10, avg emd:3.4754298, min_emd:2.851743, arg_em view:21
+165  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/40b492e1a0fb0860e2f05bd11e1d1c68/isosurf.obj avg cf:6.92865, min_cf:2.352267, arg_cf view:1, avg emd:2.266626, min_emd:1.7144294, arg_em view:21
+166  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/9076b1b9e23c7446d747b49524a1246e/isosurf.obj avg cf:5.523697, min_cf:3.3262298, arg_cf view:11, avg emd:2.2363384, min_emd:1.8960356, arg_em view:20
+167  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/3adf396785cf9dee7bbfac568080cdbc/isosurf.obj avg cf:11.2229395, min_cf:7.6903224, arg_cf view:5, avg emd:3.636727, min_emd:3.267492, arg_em view:2
+168  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/60765697073cc44cec7e019402cb7bad/isosurf.obj avg cf:6.599617, min_cf:3.3599825, arg_cf view:19, avg emd:2.9009387, min_emd:2.101631, arg_em view:1
+169  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/bdfa20e11d204ecd35cd53a06b1d2317/isosurf.obj avg cf:2.9982526, min_cf:2.314806, arg_cf view:16, avg emd:1.8258528, min_emd:1.3037515, arg_em view:16
+170  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/a3f14846404245d5bbbcb091dd094e5f/isosurf.obj avg cf:7.7205815, min_cf:5.2761426, arg_cf view:19, avg emd:3.1898549, min_emd:2.8630393, arg_em view:20
+171  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/10d16ee9c9402e6df2e5d34c7b677bc4/isosurf.obj avg cf:4.993016, min_cf:3.0570993, arg_cf view:16, avg emd:2.3675768, min_emd:1.8383775, arg_em view:13
+172  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/21612bf3e866a8831d6b14cb827cdf85/isosurf.obj avg cf:8.27904, min_cf:3.6775343, arg_cf view:18, avg emd:3.5389938, min_emd:2.2330868, arg_em view:18
+173  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/3972d44065257859c0b45c582c6ed736/isosurf.obj avg cf:17.000572, min_cf:9.695658, arg_cf view:7, avg emd:3.4222069, min_emd:2.8827538, arg_em view:20
+174  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/ae4bcb4baca763c24521562865ab775e/isosurf.obj avg cf:2.7328098, min_cf:2.116108, arg_cf view:4, avg emd:2.0859983, min_emd:1.6176428, arg_em view:4
+175  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/2ab4f9bbdc17d9cd618e9d35559b7aa/isosurf.obj avg cf:21.992958, min_cf:14.482647, arg_cf view:15, avg emd:3.8288333, min_emd:2.9634068, arg_em view:15
+176  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/970ada2dffb5ce49a663d9823c133130/isosurf.obj avg cf:3.4596329, min_cf:2.2499025, arg_cf view:15, avg emd:1.8273655, min_emd:1.616634, arg_em view:20
+177  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/b04281aa2c134623cb3c1170309e6b12/isosurf.obj avg cf:8.993614, min_cf:6.86601, arg_cf view:4, avg emd:2.9561481, min_emd:2.5717053, arg_em view:10
+178  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/aed74c2fb80bf363f5776cc601097c0a/isosurf.obj avg cf:9.417954, min_cf:6.4373074, arg_cf view:8, avg emd:2.7604218, min_emd:2.4092355, arg_em view:3
+179  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/95db5c34357e2a81bbb94390080b5b78/isosurf.obj avg cf:19.473091, min_cf:11.890955, arg_cf view:14, avg emd:4.0548587, min_emd:3.2549314, arg_em view:11
+180  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/15e847b20d22d56cd288bc0586930768/isosurf.obj avg cf:3.9783325, min_cf:1.7989916, arg_cf view:20, avg emd:1.9395682, min_emd:1.4149611, arg_em view:8
+181  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/4e3669ef40de1b3b465b32805167c435/isosurf.obj avg cf:4.50118, min_cf:3.1205015, arg_cf view:15, avg emd:2.5092049, min_emd:1.526523, arg_em view:13
+182  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/66baf7b7b4ce43d7e50f6aaad9a07bc/isosurf.obj avg cf:4.8306727, min_cf:2.2041578, arg_cf view:9, avg emd:2.1133878, min_emd:1.7675217, arg_em view:19
+183  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/b70c600b20614f4c690135fb845b8de1/isosurf.obj avg cf:7.866529, min_cf:2.2302637, arg_cf view:0, avg emd:2.4449556, min_emd:1.6115341, arg_em view:14
+184  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/fb86950be1b0ced7760a6b24be218cf3/isosurf.obj avg cf:6.919529, min_cf:4.8970833, arg_cf view:11, avg emd:2.6515522, min_emd:2.1440432, arg_em view:0
+185  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/b40b4cbf6309c3519fa340262d231abd/isosurf.obj avg cf:7.893308, min_cf:3.8921475, arg_cf view:16, avg emd:2.4253032, min_emd:1.8663244, arg_em view:16
+186  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/1ba39460a5e31c722a813544190dbe4a/isosurf.obj avg cf:6.6060023, min_cf:5.258093, arg_cf view:12, avg emd:2.6013334, min_emd:2.1243005, arg_em view:13
+187  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/8b7afc9b056307f3d3ba59ac5475adf4/isosurf.obj avg cf:8.430432, min_cf:4.390163, arg_cf view:1, avg emd:2.5577688, min_emd:1.8358457, arg_em view:18
+188  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/ca052c8db0c94fd345189af3887d3c51/isosurf.obj avg cf:16.834116, min_cf:12.713999, arg_cf view:7, avg emd:3.0255954, min_emd:2.5331368, arg_em view:7
+189  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/5ea3d1068a624c1da91bbba4742a1643/isosurf.obj avg cf:15.807678, min_cf:11.49784, arg_cf view:6, avg emd:4.965129, min_emd:4.2025633, arg_em view:6
+190  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/72c5cab12c0ddb22a0fd8d18f37cdbfc/isosurf.obj avg cf:18.43075, min_cf:6.905497, arg_cf view:5, avg emd:3.279423, min_emd:2.5770504, arg_em view:8
+191  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/f452418d7be7e78eeb752889d5199f9f/isosurf.obj avg cf:3.7728975, min_cf:2.0327885, arg_cf view:12, avg emd:1.8556005, min_emd:1.3994024, arg_em view:8
+192  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/923b7f0a4bf93c4fb66814b45dc64bc9/isosurf.obj avg cf:2.4348717, min_cf:1.7482834, arg_cf view:15, avg emd:1.5437027, min_emd:1.2893567, arg_em view:4
+193  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/3187862d922b0ce96583871b5c274818/isosurf.obj avg cf:11.154727, min_cf:6.629795, arg_cf view:0, avg emd:3.1341264, min_emd:2.3354917, arg_em view:1
+194  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/acbda0d16acd03329d4b859036b8707c/isosurf.obj avg cf:76.626686, min_cf:18.808147, arg_cf view:6, avg emd:6.82482, min_emd:5.076094, arg_em view:1
+195  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/a34c80e1f6175711c9d5b08933b9e0c1/isosurf.obj avg cf:4.818107, min_cf:2.5678022, arg_cf view:16, avg emd:2.4941514, min_emd:1.8295869, arg_em view:21
+196  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/b521957294cbb170c7c1bdfb41b9d2d/isosurf.obj avg cf:6.3639483, min_cf:3.6801245, arg_cf view:23, avg emd:2.5082872, min_emd:1.8133955, arg_em view:19
+197  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/2a8345bd5d50456d8db1a0ee98c45ee7/isosurf.obj avg cf:11.136426, min_cf:6.6913695, arg_cf view:13, avg emd:3.062522, min_emd:2.4091635, arg_em view:13
+198  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/c1ad8720fcc7246a1fb294203c64a4b3/isosurf.obj avg cf:10.8624115, min_cf:4.106086, arg_cf view:23, avg emd:3.4921992, min_emd:2.3479433, arg_em view:23
+199  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/2ae8239afdabc2baaf365ec12406f363/isosurf.obj avg cf:4.9669495, min_cf:2.2273097, arg_cf view:22, avg emd:2.1122959, min_emd:1.6669306, arg_em view:7
+200  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/8bd1d73922ebc098627a66821130f814/isosurf.obj avg cf:1.3480209, min_cf:0.99191874, arg_cf view:19, avg emd:2.3072183, min_emd:1.3129524, arg_em view:3
+201  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/8a3edcc398f34fe534b2581df0f941a1/isosurf.obj avg cf:1.9821712, min_cf:1.2894734, arg_cf view:5, avg emd:1.5975037, min_emd:1.2982227, arg_em view:3
+202  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/3fc0513ac3bf11c873d25f4e2e3775f1/isosurf.obj avg cf:4.022116, min_cf:2.6669533, arg_cf view:1, avg emd:2.6348953, min_emd:1.9156113, arg_em view:9
+203  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/3a4950ac89429ff5b396c6d231dec74d/isosurf.obj avg cf:6.119474, min_cf:2.1808603, arg_cf view:15, avg emd:2.3616097, min_emd:1.6812606, arg_em view:4
+204  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/17c5950c89528703225f3f0d46b4fca3/isosurf.obj avg cf:13.68513, min_cf:4.5995684, arg_cf view:1, avg emd:3.1469376, min_emd:2.1788743, arg_em view:1
+205  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/ffd168e54f722339ef94793a67b4c5c0/isosurf.obj avg cf:17.508776, min_cf:2.1688175, arg_cf view:18, avg emd:2.9449112, min_emd:1.6637814, arg_em view:19
+206  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/dd3f884d9b5b3c0de7b7e97e5332a9cf/isosurf.obj avg cf:9.3342085, min_cf:5.817791, arg_cf view:3, avg emd:2.8443298, min_emd:2.156885, arg_em view:11
+207  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/a6216e99923da6988947789ccf4faf06/isosurf.obj avg cf:24.488516, min_cf:1.9377044, arg_cf view:21, avg emd:2.0873291, min_emd:1.2472435, arg_em view:13
+208  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/afcd98e6a91b3d16569e2e0d2caa039/isosurf.obj avg cf:12.098862, min_cf:5.3093886, arg_cf view:21, avg emd:3.2280066, min_emd:2.289002, arg_em view:15
+209  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/da9c218b79205d489c4dd878242c44b7/isosurf.obj avg cf:3.7225304, min_cf:2.85888, arg_cf view:20, avg emd:1.8458109, min_emd:1.5727925, arg_em view:18
+210  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/dcf84867f92cef75a9c2f34ef56404ef/isosurf.obj avg cf:6.7570724, min_cf:4.2969694, arg_cf view:19, avg emd:2.5283945, min_emd:1.829422, arg_em view:3
+211  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/28b91f5ca7e3d174fb0a4dd466ef3d66/isosurf.obj avg cf:9.149392, min_cf:4.350084, arg_cf view:13, avg emd:3.1294067, min_emd:2.026157, arg_em view:13
+212  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/6fcb50de7df5381835cd53a06b1d2317/isosurf.obj avg cf:19.10972, min_cf:14.215668, arg_cf view:16, avg emd:3.9216537, min_emd:3.2786016, arg_em view:18
+213  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/bb1b387c674fdc4750577cf04f3bf74a/isosurf.obj avg cf:4.156653, min_cf:2.2396274, arg_cf view:11, avg emd:2.1168911, min_emd:1.516504, arg_em view:11
+214  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/e750bda061e86402cf39ad4726172e1d/isosurf.obj avg cf:13.670761, min_cf:9.495144, arg_cf view:15, avg emd:3.3566668, min_emd:2.9440038, arg_em view:23
+215  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/7fc23785c19991e4e180a1a604561d3b/isosurf.obj avg cf:9.146189, min_cf:6.6342854, arg_cf view:20, avg emd:3.4701154, min_emd:3.1745393, arg_em view:14
+216  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/64ba67a67d83811c2b688d771932c023/isosurf.obj avg cf:10.701743, min_cf:5.4991436, arg_cf view:16, avg emd:2.9808292, min_emd:2.1058888, arg_em view:5
+217  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/9fbb43c7437c1bb8a2ec0446d32ce69/isosurf.obj avg cf:4.4018517, min_cf:2.5762036, arg_cf view:8, avg emd:2.1803415, min_emd:1.4611038, arg_em view:8
+218  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/ff4bc6c329ec7bf8a0eebc16d3afb516/isosurf.obj avg cf:12.30914, min_cf:7.7100935, arg_cf view:15, avg emd:2.9479828, min_emd:2.4828563, arg_em view:8
+219  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/fbb7610643dae4a34c5341ee07f41676/isosurf.obj avg cf:10.878406, min_cf:4.281211, arg_cf view:9, avg emd:3.0255616, min_emd:2.019761, arg_em view:3
+220  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/800a0a91308845b4519f3f3e6cd6d1a6/isosurf.obj avg cf:2.6481893, min_cf:1.634442, arg_cf view:21, avg emd:2.1823146, min_emd:1.6483587, arg_em view:5
+221  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/aed97e60cd2802ce7ffb47acd56f396b/isosurf.obj avg cf:12.857273, min_cf:3.0804343, arg_cf view:21, avg emd:3.6652524, min_emd:2.3472154, arg_em view:12
+222  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/26363bb293e6c9e499db62650613bd48/isosurf.obj avg cf:11.322773, min_cf:7.812794, arg_cf view:0, avg emd:3.5362208, min_emd:2.8302722, arg_em view:8
+223  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/f000edc1cfdeda11bee0494534c13f8c/isosurf.obj avg cf:2.8960752, min_cf:1.7956547, arg_cf view:11, avg emd:2.9093626, min_emd:1.9802699, arg_em view:5
+224  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/fb4c855848345ecd3e738e11bd8803f8/isosurf.obj avg cf:13.744965, min_cf:7.606807, arg_cf view:7, avg emd:3.5594819, min_emd:2.6664093, arg_em view:7
+225  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/37758713e7a31d1710b84d6f34c2f2e1/isosurf.obj avg cf:4.182201, min_cf:2.4439292, arg_cf view:6, avg emd:2.0049648, min_emd:1.4469953, arg_em view:6
+226  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/afe96f3cf256cbac81a6b6721af23c58/isosurf.obj avg cf:7.6815906, min_cf:4.6149764, arg_cf view:8, avg emd:2.547726, min_emd:2.0272653, arg_em view:8
+227  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/5336a4698616726725a4212543dabaf9/isosurf.obj avg cf:15.77958, min_cf:13.6545, arg_cf view:3, avg emd:3.206133, min_emd:2.7889812, arg_em view:8
+228  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/8d55d634810b52f176f6deb1c78dfee8/isosurf.obj avg cf:13.839131, min_cf:8.251571, arg_cf view:20, avg emd:2.9676807, min_emd:2.4222481, arg_em view:20
+229  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/40511e6769c91cbcd3dbdb797d2f78b5/isosurf.obj avg cf:9.333346, min_cf:6.8030677, arg_cf view:7, avg emd:2.6630774, min_emd:2.2517114, arg_em view:13
+230  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/105d0802d1ee0430bba5c9b6de65a038/isosurf.obj avg cf:6.3916283, min_cf:3.80946, arg_cf view:18, avg emd:2.5728552, min_emd:1.8526275, arg_em view:23
+231  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/79c3e029d9ffbccbe58eb6a4fe5a2344/isosurf.obj avg cf:4.532116, min_cf:2.2835186, arg_cf view:19, avg emd:1.932654, min_emd:1.4441353, arg_em view:5
+232  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/e71f2c0e0c760ae98139dd63d55edc44/isosurf.obj avg cf:17.275183, min_cf:5.1366706, arg_cf view:13, avg emd:3.8650951, min_emd:2.2568102, arg_em view:9
+233  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/f663176a43096b35a43ada367b02a4fb/isosurf.obj avg cf:4.2280517, min_cf:2.0700915, arg_cf view:10, avg emd:1.9543843, min_emd:1.3695923, arg_em view:20
+234  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/1c25b626dddfc36a28d267d044b54402/isosurf.obj avg cf:23.982666, min_cf:10.51698, arg_cf view:3, avg emd:3.8827477, min_emd:2.9142542, arg_em view:14
+235  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/548f94cd0c5fba501148996e35417db6/isosurf.obj avg cf:1.9244512, min_cf:0.8223176, arg_cf view:13, avg emd:1.3481282, min_emd:0.9515471, arg_em view:1
+236  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/a82329a937432afe8d28f674ed08c521/isosurf.obj avg cf:3.227577, min_cf:2.018215, arg_cf view:20, avg emd:1.9348327, min_emd:1.465888, arg_em view:5
+237  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/542bc1ef866548c3d24fc75b2f944a91/isosurf.obj avg cf:9.347168, min_cf:4.4288363, arg_cf view:23, avg emd:2.9329376, min_emd:2.0882068, arg_em view:17
+238  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/80109bf3b6904d577edd21390c628646/isosurf.obj avg cf:14.89832, min_cf:9.9539995, arg_cf view:22, avg emd:3.9551928, min_emd:3.3985064, arg_em view:16
+239  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/431892f5456a2b9ab96497d8dce09d96/isosurf.obj avg cf:7.606705, min_cf:3.3501294, arg_cf view:8, avg emd:2.51292, min_emd:1.7709304, arg_em view:3
+240  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/b7a6e59fe546d81cdb2e05daba43d6f/isosurf.obj avg cf:12.1792, min_cf:7.234951, arg_cf view:19, avg emd:3.3865652, min_emd:2.9677572, arg_em view:19
+241  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/5dd29010575d36ea73e1b2d018c0512/isosurf.obj avg cf:9.624918, min_cf:6.979868, arg_cf view:4, avg emd:2.7407033, min_emd:2.3707433, arg_em view:4
+242  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/f2e521a8d08e2a2f20363e2561dd589a/isosurf.obj avg cf:11.123935, min_cf:5.677198, arg_cf view:5, avg emd:3.1099117, min_emd:2.3142214, arg_em view:14
+243  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/be83d48fc695dca62b4e8a84a498fb09/isosurf.obj avg cf:9.064763, min_cf:2.2628648, arg_cf view:0, avg emd:2.5726817, min_emd:1.6621554, arg_em view:0
+244  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/be5e0dbd5a8a589ca04f967bd94443cb/isosurf.obj avg cf:13.01355, min_cf:6.6193194, arg_cf view:5, avg emd:3.2434895, min_emd:2.3363166, arg_em view:18
+245  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/92e409aa16d2d673b5203226c26c59ad/isosurf.obj avg cf:2.585928, min_cf:1.6742693, arg_cf view:17, avg emd:1.7654959, min_emd:1.4025384, arg_em view:10
+246  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/4a1ffed169f04f5fd084cd4069686980/isosurf.obj avg cf:13.861022, min_cf:6.6582894, arg_cf view:15, avg emd:3.5412712, min_emd:2.8768659, arg_em view:20
+247  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/75c408e3ce113c84d084cd4069686980/isosurf.obj avg cf:10.441009, min_cf:4.9459662, arg_cf view:23, avg emd:3.17612, min_emd:2.0003808, arg_em view:23
+248  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/96d6d519784e40c0c066b9622c005c53/isosurf.obj avg cf:5.236502, min_cf:3.0102289, arg_cf view:22, avg emd:2.064563, min_emd:1.6524721, arg_em view:21
+249  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/984d064e7e0310f54cb67f35c09e50ad/isosurf.obj avg cf:4.7969804, min_cf:3.8700378, arg_cf view:19, avg emd:2.2771425, min_emd:1.761947, arg_em view:9
+250  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/84e6e1fb56eb60e918d385624fdfc6d0/isosurf.obj avg cf:14.705848, min_cf:4.6864443, arg_cf view:18, avg emd:2.9738586, min_emd:1.828988, arg_em view:18
+251  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/a2dc5748b523db72bbbcb091dd094e5f/isosurf.obj avg cf:11.445645, min_cf:7.786219, arg_cf view:10, avg emd:3.3564615, min_emd:2.9354014, arg_em view:15
+252  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/46bd2ce6ca3439c9c2687184da14e3dc/isosurf.obj avg cf:2.5251992, min_cf:1.753578, arg_cf view:11, avg emd:2.0602067, min_emd:1.4410931, arg_em view:6
+253  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/f9a615ecebfe7ae1b27175774c9e33e9/isosurf.obj avg cf:10.607288, min_cf:6.6638107, arg_cf view:11, avg emd:3.0171463, min_emd:2.4436324, arg_em view:14
+254  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/8d7d7dbf8f0c0f7673e1b2d018c0512/isosurf.obj avg cf:10.150435, min_cf:2.7108324, arg_cf view:22, avg emd:2.8115501, min_emd:1.7635362, arg_em view:22
+255  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/b754df4013a71f6873e1b2d018c0512/isosurf.obj avg cf:4.6852612, min_cf:2.9964252, arg_cf view:12, avg emd:2.1203296, min_emd:1.7270023, arg_em view:10
+256  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/b2af20dc171d40e4d4e62d99c536bbaf/isosurf.obj avg cf:14.69617, min_cf:11.96336, arg_cf view:12, avg emd:3.4945583, min_emd:2.7410295, arg_em view:5
+257  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/2d1302ed4d4f43ca73e1b2d018c0512/isosurf.obj avg cf:10.405556, min_cf:7.947054, arg_cf view:5, avg emd:3.1228583, min_emd:2.3431144, arg_em view:0
+258  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/d087ad474122e24d887e8faf8f33b0c5/isosurf.obj avg cf:12.25764, min_cf:8.509757, arg_cf view:16, avg emd:3.6692913, min_emd:2.6090024, arg_em view:7
+259  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/5578446e4a13451a6c7c9dba2abc9f8b/isosurf.obj avg cf:11.836917, min_cf:6.2029057, arg_cf view:3, avg emd:2.8890495, min_emd:2.3632908, arg_em view:23
+260  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/94abce2eb2c9567da7729f9969cb563e/isosurf.obj avg cf:6.589291, min_cf:3.4397259, arg_cf view:20, avg emd:2.978655, min_emd:2.3017566, arg_em view:11
+261  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/27046cee7ae745e6d207241113bee327/isosurf.obj avg cf:8.542932, min_cf:4.9420967, arg_cf view:3, avg emd:3.2944386, min_emd:2.8307605, arg_em view:21
+262  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/c75c5ae81c1fd498c066b9622c005c53/isosurf.obj avg cf:21.15357, min_cf:13.679402, arg_cf view:8, avg emd:4.1150208, min_emd:3.234334, arg_em view:18
+263  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/57412ca31eeb15bf75fa5879e0c49e00/isosurf.obj avg cf:7.8750596, min_cf:4.9098196, arg_cf view:1, avg emd:2.6001816, min_emd:2.0859432, arg_em view:20
+264  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/bc11fa1bae19a90ad74a70b98d3225c0/isosurf.obj avg cf:7.2041793, min_cf:4.6909223, arg_cf view:14, avg emd:2.5921981, min_emd:2.0440276, arg_em view:14
+265  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/217733447f1ec818c066b9622c005c53/isosurf.obj avg cf:14.723816, min_cf:6.162378, arg_cf view:10, avg emd:3.747937, min_emd:2.5380194, arg_em view:22
+266  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/d06efc46aa999fa21574d21c0c95092f/isosurf.obj avg cf:7.3714795, min_cf:5.056501, arg_cf view:4, avg emd:3.3876684, min_emd:2.1843424, arg_em view:4
+267  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/b209054be0f71cfdf398d0c5832df00e/isosurf.obj avg cf:3.6016147, min_cf:2.6158345, arg_cf view:3, avg emd:2.0610514, min_emd:1.6746093, arg_em view:17
+268  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/115115104976edfdc066b9622c005c53/isosurf.obj avg cf:18.406908, min_cf:9.620328, arg_cf view:7, avg emd:3.6981952, min_emd:2.8866582, arg_em view:7
+269  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/e41aab211af3f84673e1b2d018c0512/isosurf.obj avg cf:9.845756, min_cf:8.41133, arg_cf view:23, avg emd:3.539449, min_emd:2.8735669, arg_em view:7
+270  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/2d53b9798c7ffe7a6e55c6c7c80df9dd/isosurf.obj avg cf:4.650067, min_cf:3.9127982, arg_cf view:8, avg emd:2.0015905, min_emd:1.7869922, arg_em view:5
+271  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/485a778cb7416a59e810658c16fad24a/isosurf.obj avg cf:16.278753, min_cf:11.203575, arg_cf view:7, avg emd:4.4341044, min_emd:3.3948908, arg_em view:7
+272  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/83dea2f2561fc2fbe9364d19fabb5f00/isosurf.obj avg cf:7.7603974, min_cf:5.5347915, arg_cf view:13, avg emd:2.8159523, min_emd:2.2488332, arg_em view:11
+273  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/ec0a8e2fa00a746dfe74514a9fcabaf8/isosurf.obj avg cf:7.7953086, min_cf:4.6845555, arg_cf view:1, avg emd:2.6025555, min_emd:2.2038448, arg_em view:8
+274  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/1ca17d2cadd47286c066b9622c005c53/isosurf.obj avg cf:19.538319, min_cf:11.200264, arg_cf view:17, avg emd:4.1808515, min_emd:3.4428039, arg_em view:17
+275  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/f7a45911d01fe4a961775b840d882da9/isosurf.obj avg cf:5.5276375, min_cf:1.194132, arg_cf view:1, avg emd:1.8960438, min_emd:1.396401, arg_em view:2
+276  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/b0feef9f599d41cbb3d8c1107f6ae528/isosurf.obj avg cf:11.399587, min_cf:3.5579102, arg_cf view:9, avg emd:2.9643967, min_emd:2.1122174, arg_em view:2
+277  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/d2426b884d1108e8bdc8d5970acdf989/isosurf.obj avg cf:8.394325, min_cf:2.021457, arg_cf view:14, avg emd:1.9364656, min_emd:1.5658169, arg_em view:9
+278  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/39554167163a7cc3f881bbcfcc456ec/isosurf.obj avg cf:10.634614, min_cf:7.2224746, arg_cf view:2, avg emd:3.7566388, min_emd:2.9038327, arg_em view:4
+279  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/ed06c596dd9b9cf3dc99793862c889e0/isosurf.obj avg cf:9.976333, min_cf:5.896414, arg_cf view:5, avg emd:2.658266, min_emd:2.2607453, arg_em view:1
+280  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/68bbfac3232f153c6ecea800f06e81d/isosurf.obj avg cf:12.134361, min_cf:6.1506658, arg_cf view:17, avg emd:3.4195814, min_emd:2.4320078, arg_em view:21
+281  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/cfc38353ff8392e73a7dda43d8d95517/isosurf.obj avg cf:1.5204996, min_cf:1.0076805, arg_cf view:21, avg emd:1.710805, min_emd:1.2376904, arg_em view:1
+282  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/a31ac0bd8915d99631c992914b89bc52/isosurf.obj avg cf:7.7134223, min_cf:5.4728565, arg_cf view:17, avg emd:2.5120904, min_emd:1.9841589, arg_em view:19
+283  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/65dfccb2d5e47538a24143eec482cd09/isosurf.obj avg cf:12.436233, min_cf:5.833303, arg_cf view:9, avg emd:2.9207096, min_emd:2.2657952, arg_em view:3
+284  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/c51823c76ebc7f6e464e6423c0222f3b/isosurf.obj avg cf:13.685475, min_cf:10.507337, arg_cf view:23, avg emd:3.2523925, min_emd:2.6638548, arg_em view:2
+285  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/c398c35b48c31188c73a379f25dda815/isosurf.obj avg cf:9.986012, min_cf:6.926655, arg_cf view:12, avg emd:3.1541083, min_emd:2.423811, arg_em view:3
+286  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/ebe84e8ccc8b5f3fa817854e3b5b5439/isosurf.obj avg cf:11.37645, min_cf:8.435586, arg_cf view:13, avg emd:3.2210076, min_emd:2.47956, arg_em view:18
+287  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/1ac22719af776fcea2626afcc786d93/isosurf.obj avg cf:7.306173, min_cf:5.2974253, arg_cf view:11, avg emd:2.4696023, min_emd:2.08749, arg_em view:7
+288  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/e2c1e8958295f84459fca7a6b28640d3/isosurf.obj avg cf:8.6051655, min_cf:6.2873607, arg_cf view:12, avg emd:3.0535247, min_emd:2.611486, arg_em view:10
+289  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/d3a872834cd0aa94d77ea5e1afa5bfe6/isosurf.obj avg cf:6.2323685, min_cf:3.5017872, arg_cf view:0, avg emd:2.145588, min_emd:1.6139035, arg_em view:0
+290  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/c15fdc911c54f4cb62c440075d5ed193/isosurf.obj avg cf:12.884708, min_cf:5.770143, arg_cf view:3, avg emd:3.649667, min_emd:2.642887, arg_em view:7
+291  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/1bf06b16e59e482c238ad1274d829e68/isosurf.obj avg cf:11.887166, min_cf:8.950247, arg_cf view:4, avg emd:3.3900871, min_emd:2.9134686, arg_em view:12
+292  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/73c40350f07efb92d207241113bee327/isosurf.obj avg cf:10.839452, min_cf:7.564786, arg_cf view:8, avg emd:3.415713, min_emd:2.7711504, arg_em view:19
+293  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/b3f5d033d3fed8e9d207241113bee327/isosurf.obj avg cf:10.376298, min_cf:6.6998854, arg_cf view:11, avg emd:3.893508, min_emd:2.877313, arg_em view:11
+294  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/e47b83b94a1956ad7a16fcc398700938/isosurf.obj avg cf:7.0019374, min_cf:4.8868423, arg_cf view:14, avg emd:2.4442594, min_emd:2.0779417, arg_em view:4
+295  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/8e25a8e0de9ff545bf1411bc6f3b308/isosurf.obj avg cf:10.159347, min_cf:8.163362, arg_cf view:0, avg emd:3.0891516, min_emd:2.537451, arg_em view:10
+296  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/b4d4338a36711ccdb113389b677f57ff/isosurf.obj avg cf:11.058372, min_cf:5.7246284, arg_cf view:20, avg emd:2.8415072, min_emd:2.3060446, arg_em view:20
+297  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/4f152b01f056d0c35363d5176df02e54/isosurf.obj avg cf:11.91919, min_cf:9.270553, arg_cf view:22, avg emd:3.251866, min_emd:2.5715697, arg_em view:22
+298  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/eadad629c581c28c6b424c689f1d711a/isosurf.obj avg cf:10.143513, min_cf:7.2941456, arg_cf view:15, avg emd:3.4402153, min_emd:2.9786108, arg_em view:6
+299  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/95d01543b46b5e43f398d0c5832df00e/isosurf.obj avg cf:2.6744916, min_cf:2.008554, arg_cf view:18, avg emd:1.844941, min_emd:1.5375488, arg_em view:15
+300  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/b1fa05d508d9ed81753a010738a20397/isosurf.obj avg cf:7.3253593, min_cf:3.3483713, arg_cf view:3, avg emd:2.3573282, min_emd:1.935446, arg_em view:2
+301  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/88ae9338c167e8d5238ad1274d829e68/isosurf.obj avg cf:11.986961, min_cf:9.147493, arg_cf view:8, avg emd:3.5228195, min_emd:2.7503166, arg_em view:10
+302  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/90e3a0488b8ff079d207241113bee327/isosurf.obj avg cf:10.590072, min_cf:7.584181, arg_cf view:10, avg emd:3.7510574, min_emd:3.2858565, arg_em view:10
+303  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/108316842b17210394a42262667addbc/isosurf.obj avg cf:10.484932, min_cf:5.7575073, arg_cf view:10, avg emd:2.945486, min_emd:2.1797957, arg_em view:10
+304  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/29c140fb4eba078c7909eb62c64c0070/isosurf.obj avg cf:9.154553, min_cf:6.064246, arg_cf view:10, avg emd:3.8920925, min_emd:3.0012243, arg_em view:23
+305  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/e2dc092a4ef62c09d207241113bee327/isosurf.obj avg cf:9.999214, min_cf:6.6112084, arg_cf view:11, avg emd:4.055244, min_emd:3.1143906, arg_em view:18
+306  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/64ebe165fa668ad4abbfc2108a5a7885/isosurf.obj avg cf:14.582471, min_cf:5.439044, arg_cf view:14, avg emd:3.4389074, min_emd:2.3060565, arg_em view:14
+307  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/4468a5e60a6fedc086bb0379a61a0978/isosurf.obj avg cf:11.405389, min_cf:7.9754553, arg_cf view:8, avg emd:3.22241, min_emd:2.542281, arg_em view:22
+308  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/52e827d2f969a2b61f2b6130e0fe93a6/isosurf.obj avg cf:8.912362, min_cf:6.006229, arg_cf view:21, avg emd:2.6801803, min_emd:2.1637654, arg_em view:21
+309  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/3ee30326a3bdf219ec2ca8479368108a/isosurf.obj avg cf:10.858195, min_cf:6.0126967, arg_cf view:23, avg emd:3.4350224, min_emd:2.4806426, arg_em view:23
+310  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/6e6b4d2603930dfd4fc88114be3a6b6f/isosurf.obj avg cf:11.668719, min_cf:7.9411306, arg_cf view:3, avg emd:3.8063848, min_emd:3.1987734, arg_em view:2
+311  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/d17192339d28af3234140f5d5f70bb2c/isosurf.obj avg cf:8.959645, min_cf:7.0026507, arg_cf view:7, avg emd:2.8157046, min_emd:2.4944985, arg_em view:7
+312  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/38007ed3e5ce40ab13dd6eafe1477be1/isosurf.obj avg cf:4.068168, min_cf:2.6582615, arg_cf view:20, avg emd:2.8124435, min_emd:1.8593006, arg_em view:15
+313  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/123f9066606d80206454c2aa07613033/isosurf.obj avg cf:12.653069, min_cf:8.744163, arg_cf view:8, avg emd:3.503938, min_emd:2.8066118, arg_em view:8
+314  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/a4ffce648faf8349e651a075b3dd0597/isosurf.obj avg cf:10.48042, min_cf:8.454827, arg_cf view:8, avg emd:3.3542316, min_emd:2.557159, arg_em view:3
+315  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/1c5c9d780dffb5c2599d9c8430d600ff/isosurf.obj avg cf:5.458863, min_cf:2.758605, arg_cf view:17, avg emd:2.0778372, min_emd:1.5076907, arg_em view:17
+316  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/d69d5cf7868651effd28950562697757/isosurf.obj avg cf:2.0939772, min_cf:1.4727257, arg_cf view:7, avg emd:1.5402254, min_emd:1.2566139, arg_em view:16
+317  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/221a981adf503875e17b9e33c097dbff/isosurf.obj avg cf:19.70616, min_cf:11.015261, arg_cf view:20, avg emd:4.200793, min_emd:3.1693034, arg_em view:20
+318  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/4e06e2b59a83bb6229cd1f0bcc30f82c/isosurf.obj avg cf:5.8678184, min_cf:3.0126576, arg_cf view:10, avg emd:2.3800292, min_emd:1.7004488, arg_em view:10
+319  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/cd451b74570bd84f44dc88afcdcd380/isosurf.obj avg cf:24.02198, min_cf:5.193199, arg_cf view:15, avg emd:3.9256446, min_emd:2.2148333, arg_em view:15
+320  /mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1/03691459/cf7a2cb0c487f3a0bd1cba733b111584/isosurf.obj avg cf:6.330841, min_cf:2.765202, arg_cf view:14, avg emd:2.293369, min_emd:1.7672796, arg_em view:15
+bad example numble: 0
+cat_nm:speaker, cat_id:03691459, avg_cf:9.104373728856444, avg_emd:2.8097550719976425
+done!
