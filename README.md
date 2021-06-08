@@ -3,7 +3,7 @@
 
 ## Neural Implicit 3D Shapes from Single Images with Spatial Patterns
 
-This repository provides PyTorch implementation of our paper:
+This repository provides PyTorch implementation of the work:
 
 [Neural Implicit 3D Shapes from Single Images with Spatial Patterns](https://arxiv.org/pdf/2106.03087.pdf)
 
