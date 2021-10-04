@@ -104,29 +104,10 @@ class SDFdata(Dataset):
             obj_rot_mat = h5_f["obj_rot_mat"][:].astype(np.float32)
             regress_mat = h5_f["regress_mat"][:].astype(np.float32)
 
-            alpha,augcolorfore,augcolorback,augcolorfore,backcolorwhite,augcolorback = [0,0,0,0,0,0]
-            if alpha:
-                img_arr = h5_f["img_arr"][:].astype(np.float32)
-                img_arr[:, :, :4] = img_arr[:,:,:4] / 255.
-            else:
-                img_raw = h5_f["img_arr"][:]
-                img_arr = img_raw[:, :, :3]
-                if augcolorfore or augcolorback:
-                    r_aug = 60 * np.random.rand() - 30
-                    g_aug = 60 * np.random.rand() - 30
-                    b_aug = 60 * np.random.rand() - 30
-                if augcolorfore:
-                    img_arr[img_raw[:, :, 3] != 0, 0] + r_aug
-                    img_arr[img_raw[:, :, 3] != 0, 1] + g_aug
-                    img_arr[img_raw[:, :, 3] != 0, 2] + b_aug
-                if backcolorwhite:
-                    img_arr[img_raw[:, :, 3] == 0] = [255, 255, 255]
-                if augcolorback:
-                    img_arr[img_raw[:, :, 3] == 0, 0] + r_aug
-                    img_arr[img_raw[:, :, 3] == 0, 1] + g_aug
-                    img_arr[img_raw[:, :, 3] == 0, 2] + b_aug
-                img_arr = np.clip(img_arr, 0, 255)
-                img_arr = img_arr.astype(np.float32) / 255.
+            img_raw = h5_f["img_arr"][:]
+            img_arr = img_raw[:, :, :3]
+            img_arr = np.clip(img_arr, 0, 255)
+            img_arr = img_arr.astype(np.float32) / 255.
 
             return img_arr, cam_mat, cam_pos, trans_mat, obj_rot_mat, regress_mat
 

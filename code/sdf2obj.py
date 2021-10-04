@@ -13,7 +13,7 @@ import struct
 import sys
 RESOLUTION = 65
 TOTAL_POINTS = RESOLUTION * RESOLUTION * RESOLUTION
-SPLIT_SIZE = int(np.ceil(TOTAL_POINTS / 24576.0 ))
+SPLIT_SIZE = int(np.ceil(TOTAL_POINTS / 34329.0 ))
 NUM_SAMPLE_POINTS = int(np.ceil(TOTAL_POINTS / SPLIT_SIZE))
 
 BASE_DIR = '/mnt/disk7/yixin/DISN'

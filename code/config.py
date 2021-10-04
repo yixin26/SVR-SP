@@ -70,11 +70,11 @@ class Config(object):
         group.add_argument('--category', type=str, default='chair', help='shape category name')
         group.add_argument('--num_workers', type=int, default=8, help='number of workers for data loading')
         group.add_argument('--sdf_h5_path', type=str, default='/mnt/disk7/yixin/data/ShapeNet/SDF_v1', help='where sdf data is')
-        group.add_argument('--render_h5_path', type=str, default='/mnt/disk7/yixin/data/ShapeNet/ShapeNetRenderingh5_v1', help='where render data is')
-        #group.add_argument('--render_h5_path', type=str, default='/mnt/disk7/yixin/data/ShapeNet/PretrainedEsth5', help='where render data is') #using estimate camera
+        #group.add_argument('--render_h5_path', type=str, default='/mnt/disk7/yixin/data/ShapeNet/ShapeNetRenderingh5_v1', help='where render data is')
+        group.add_argument('--render_h5_path', type=str, default='/mnt/disk7/yixin/data/ShapeNet/PretrainedEsth5', help='where render data is')
+
         group.add_argument('--id_path', type=str, default='/mnt/disk7/yixin/data/ShapeNet/filelists')
         group.add_argument('--mesh_obj_path', type=str, default='/mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1', help='where render data is')
-
         group.add_argument('--img_h', type=int, default=137)
         group.add_argument('--img_w', type=int, default=137)
         group.add_argument('--num_sample_points', type=int, default=2048)
@@ -89,7 +89,7 @@ class Config(object):
 
     def _add_training_config_(self, parser):
         group = parser.add_argument_group('training')
-        group.add_argument('--nr_epochs', type=int, default=100, help='total number of epochs to train')
+        group.add_argument('--nr_epochs', type=int, default=50, help='total number of epochs to train')
         group.add_argument('--wd', action='store_true', default=False, help='weight decay')
         group.add_argument('--lr', type=float, default=1e-4, help='initial learning rate')
         group.add_argument('--lr_step_size', type=int, default=5, help='step size for learning rate decay')
