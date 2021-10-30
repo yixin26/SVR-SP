@@ -53,3 +53,15 @@ During training, we use Furthest Point Sampling algorithm to downsample the inpu
 Please use the trained model to generate spatial patterns. The visualization codes and materials can be found at folder ```code/visualization/```.
 
 
+### Cite
+
+Please cite our work if you find it useful:
+
+```
+@article{zhuang2021neural,
+  title={Neural Implicit 3D Shapes from Single Images with Spatial Patterns},
+  author={Zhuang, Yixin and Liu, Yunzhe and Wang, Yujie and Chen, Baoquan},
+  journal={arXiv preprint arXiv:2106.03087},
+  year={2021}
+}
+```
