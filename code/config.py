@@ -70,8 +70,8 @@ class Config(object):
         group.add_argument('--category', type=str, default='chair', help='shape category name')
         group.add_argument('--num_workers', type=int, default=8, help='number of workers for data loading')
         group.add_argument('--sdf_h5_path', type=str, default='/mnt/disk7/yixin/data/ShapeNet/SDF_v1', help='where sdf data is')
-        #group.add_argument('--render_h5_path', type=str, default='/mnt/disk7/yixin/data/ShapeNet/ShapeNetRenderingh5_v1', help='where render data is')
-        group.add_argument('--render_h5_path', type=str, default='/mnt/disk7/yixin/data/ShapeNet/PretrainedEsth5', help='where render data is')
+        group.add_argument('--render_h5_path', type=str, default='/mnt/disk7/yixin/data/ShapeNet/ShapeNetRenderingh5_v1', help='where render data is') #the ground truth camera
+        #group.add_argument('--render_h5_path', type=str, default='/mnt/disk7/yixin/data/ShapeNet/PretrainedEsth5', help='where render data is') #the estimated camera
 
         group.add_argument('--id_path', type=str, default='/mnt/disk7/yixin/data/ShapeNet/filelists')
         group.add_argument('--mesh_obj_path', type=str, default='/mnt/disk7/yixin/data/ShapeNet/march_cube_objs_v1', help='where render data is')

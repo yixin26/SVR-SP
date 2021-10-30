@@ -1,4 +1,4 @@
-name: svrsp
+name: spatial_pattern
 channels:
   - pytorch
   - conda-forge

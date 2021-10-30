@@ -26,7 +26,6 @@ def getids(info_dir,sdf_h5_path,cat_id,num_views):
     with open(info_dir, 'r') as f:
         lines = f.read().splitlines()
         for line in lines:
-            #check file existence;
             sdf_path = os.path.join(sdf_h5_path, cat_id, line.strip(), 'ori_sample.h5')
             if os.path.exists(sdf_path):
                 for render in range(num_views):
@@ -68,58 +67,69 @@ class SDFdata(Dataset):
                 self.cats_limit[cat_id] = len(idlist)
             self.epoch_amount += self.cats_limit[cat_id]
 
-        self.data = list(range(len(self.ids)))
+        self.data_order = list(range(len(self.ids)))
+        self.order = self.data_order #self.order would be changed in each iteration
         print('num of ',phase,' data:',self.epoch_amount)
 
     def __len__(self):
         return self.epoch_amount
 
+    def resample_data(self):
+        if self.shuffle:
+            self.order = self.refill_data_order()
+            print("data order reordered!")
+
+    def refill_data_order(self):
+        temp_order = copy.deepcopy(self.data_order)
+        cats_quota = {key: value for key, value in self.cats_limit.items()}
+        np.random.shuffle(temp_order)
+        pointer = 0
+        epoch_order=[]
+        while len(epoch_order) < self.epoch_amount:
+            cat_id, _, _ = self.ids[temp_order[pointer]]
+            if cats_quota[cat_id] > 0:
+                epoch_order.append(temp_order[pointer])
+                cats_quota[cat_id]-=1
+            pointer+=1
+        return epoch_order
+
     def get_sdf_h5(self, sdf_h5_file, cat_id, obj):
         h5_f = h5py.File(sdf_h5_file, 'r')
         try:
-            if ('pc_sdf_original' in h5_f.keys()
-                    and 'pc_sdf_sample' in h5_f.keys()
-                    and 'norm_params' in h5_f.keys()):
-                ori_sdf = h5_f['pc_sdf_original'][:].astype(np.float32)
-                # sample_sdf = np.reshape(h5_f['pc_sdf_sample'][:],(ori_sdf.shape[0], -1 ,4)).astype(np.float32)
+            if ('pc_sdf_sample' in h5_f.keys()
+                    and 'sdf_params' in h5_f.keys()):
                 sample_sdf = h5_f['pc_sdf_sample'][:].astype(np.float32)
-                ori_pt = ori_sdf[:,:3]#, ori_sdf[:,3]
-                ori_sdf_val = None
                 if sample_sdf.shape[1] == 4:
                     sample_pt, sample_sdf_val = sample_sdf[:, :3], sample_sdf[:, 3]
                 else:
                     sample_pt, sample_sdf_val = None, sample_sdf[:, 0]
-                norm_params = h5_f['norm_params'][:]
                 sdf_params = h5_f['sdf_params'][:]
             else:
                 raise Exception(cat_id, obj, "no sdf and sample")
         finally:
             h5_f.close()
-        return ori_pt, ori_sdf_val, sample_pt, sample_sdf_val, norm_params, sdf_params
+        return sample_pt, sample_sdf_val, sdf_params
 
     def get_img(self, img_h5):
-        cam_mat, cam_pos, trans_mat, obj_rot_mat, regress_mat = None, None, None, None, None
         with h5py.File(img_h5, 'r') as h5_f:
             trans_mat = h5_f["trans_mat"][:].astype(np.float32)
-            obj_rot_mat = h5_f["obj_rot_mat"][:].astype(np.float32)
-            regress_mat = h5_f["regress_mat"][:].astype(np.float32)
-
             img_raw = h5_f["img_arr"][:]
             img_arr = img_raw[:, :, :3]
             img_arr = np.clip(img_arr, 0, 255)
             img_arr = img_arr.astype(np.float32) / 255.
 
-            return img_arr, cam_mat, cam_pos, trans_mat, obj_rot_mat, regress_mat
+            return img_arr, trans_mat
 
     def __getitem__(self, index):
-        cat_id, sdf_name, view = self.ids[self.data[index]]
+        cat_id, sdf_name, view = self.ids[self.order[index]]
         sdf_path = os.path.join(self.sdf_h5_path, cat_id, sdf_name, 'ori_sample.h5')
         render_path = os.path.join(self.render_h5_path, cat_id, sdf_name, "%02d.h5" % view)
 
-        ori_pt, ori_sdf_val, sample_pt, sample_sdf_val, norm_params, sdf_params  = self.get_sdf_h5(sdf_path, cat_id, sdf_name)
-        img, cam_mat, cam_pos, trans_mat, obj_rot_mat, regress_mat = self.get_img(render_path)
+        sample_pt, sample_sdf_val, sdf_params = self.get_sdf_h5(sdf_path, cat_id, sdf_name)
+        img, trans_mat = self.get_img(render_path)
 
         return {'sdf_pt':sample_pt,
+                'sdf_val':sample_sdf_val,
                 'sdf_params':sdf_params,
                 'img': img, #HxWx4 (137x137)
                 'trans_mat': trans_mat, #3x4

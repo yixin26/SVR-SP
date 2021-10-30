@@ -80,9 +80,10 @@ class BaseAgent(object):
             self.net.module.load_state_dict(checkpoint['model_state_dict'])
         else:
             self.net.load_state_dict(checkpoint['model_state_dict'])
-        #self.optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
-        #self.scheduler.load_state_dict(checkpoint['scheduler_state_dict'])
-        #self.clock.restore_checkpoint(checkpoint['clock'])
+        if ('optimizer_state_dict' in checkpoint.keys() and 'scheduler_state_dict' in checkpoint.keys() and 'clock' in checkpoint.keys()):
+            self.optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+            self.scheduler.load_state_dict(checkpoint['scheduler_state_dict'])
+            self.clock.restore_checkpoint(checkpoint['clock'])
 
     @abstractmethod
     def forward(self, data):
@@ -117,9 +118,6 @@ class BaseAgent(object):
         if self.config.model == 'SDFNet':
             loss = {}
             loss['sdf_loss'] = losses['sdf_loss'] + losses['regularization_loss']
-        elif self.config.model == 'CamNet':
-            loss = {}
-            loss['pose_loss'] = losses['pose_loss'] + losses['regularization_loss']
         else:
             raise ValueError
 
@@ -147,6 +145,35 @@ class BaseAgent(object):
         """write visualization results to tensorboard writer"""
         raise NotImplementedError
 
+from torch.autograd import Function
+import sampling_cuda
+
+class FurthestPointSampling(Function):
+    @staticmethod
+    def forward(ctx, xyz: torch.Tensor, npoint: int) -> torch.Tensor:
+        """
+        Uses iterative furthest point sampling to select a set of npoint features that have the largest
+        minimum distance
+        :param ctx:
+        :param xyz: (B, N, 3) where N > npoint
+        :param npoint: int, number of features in the sampled set
+        :return:
+             output: (B, npoint) tensor containing the set
+        """
+        assert xyz.is_contiguous()
+
+        B, N, _ = xyz.size()
+        output = torch.cuda.IntTensor(B, npoint)
+        temp = torch.cuda.FloatTensor(B, N).fill_(1e10)
+
+        sampling_cuda.furthest_point_sampling_wrapper(B, N, npoint, xyz, temp, output)
+        return output
+
+    @staticmethod
+    def backward(xyz, a=None):
+        return None, None
+furthest_point_sample = FurthestPointSampling.apply
+
 from sdfnet import get_model
 def get_agent(config):
     return Agent(config)
@@ -168,6 +195,51 @@ class Agent(BaseAgent):
         if config.use_gpu:
             net = net.cuda()
         return net
+
+    def eval(self, gt_sdf, pred_sdf):
+        zero = 0.0
+        gt_sign = gt_sdf > zero
+        pred_sign = pred_sdf > zero
+        accuracy = torch.mean((gt_sign==pred_sign).float())
+        sdf_loss_realvalue = torch.mean(torch.abs(gt_sdf - pred_sdf / self.sdf_weight))
+        return accuracy.detach(),sdf_loss_realvalue.detach()
+
+    def forward(self, data):
+        sample_pt = data['sdf_pt'].contiguous()
+        target_sdf = data['sdf_val'].contiguous()
+        img = data['img'].transpose(2, 3).transpose(1, 2).contiguous()
+        trans_mat = data['trans_mat'].contiguous()
+
+        if self.config.use_gpu:
+            sample_pt = sample_pt.cuda()
+            target_sdf = target_sdf.cuda()
+            img = img.cuda()
+            trans_mat = trans_mat.cuda()
+
+        choice = furthest_point_sample(sample_pt, 2048).to(torch.int64)
+        sample_pt = torch.gather(sample_pt, dim=1, index=choice.unsqueeze(2).expand(-1, -1, 3))
+        target_sdf = torch.gather(target_sdf, dim=1, index=choice)
+
+        output_sdf = self.net(img, sample_pt, trans_mat)
+
+        weight_mask = (target_sdf<=self.delta) * self.mask_weight + (target_sdf>self.delta)
+        sdf_loss = torch.mean(torch.abs(target_sdf * self.sdf_weight - output_sdf) * weight_mask) * 1000
+
+        #add regularization
+        regularization_loss = 0
+        lamda = 1e-6
+        for name, param in self.net.named_parameters():
+            if 'bias' not in name:
+                regularization_loss += torch.sum(abs(param))
+        regularization_loss *= lamda
+
+        accuracy, sdf_loss_realvalue = self.eval(target_sdf,output_sdf)
+
+        return output_sdf, {"sdf_loss": sdf_loss,
+                            "accuracy": accuracy,
+                            "sdf_loss_realvalue": sdf_loss_realvalue,
+                            "regularization_loss": regularization_loss
+                            }
 
     def infering(self, data):
         sample_pt = data['sdf_pt'].contiguous()

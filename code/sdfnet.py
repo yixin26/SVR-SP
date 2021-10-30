@@ -179,7 +179,18 @@ class SDFNet(nn.Module):
 
         return local_feats, local_feats_ref
 
-    def get_affinities(self, pts):
+    def get_affinities_uniform(self, pts):
+        pts_aff = []
+        radius = 0.1
+        pts_aff += [torch.cat([pts[:, :, 0:2], pts[:, :, 2:3]+radius], dim=2)]
+        pts_aff += [torch.cat([pts[:, :, 0:1]+radius,pts[:,:,1:3]], dim=2)]
+        pts_aff += [torch.cat([pts[:, :, 0:1], pts[:, :, 1:2]+radius,pts[:, :, 2:3]], dim=2)]
+        pts_aff += [torch.cat([pts[:, :, 0:2], pts[:, :, 2:3]-radius], dim=2)]
+        pts_aff += [torch.cat([pts[:, :, 0:1]-radius,pts[:,:,1:3]], dim=2)]
+        pts_aff += [torch.cat([pts[:, :, 0:1], pts[:, :, 1:2]-radius,pts[:, :, 2:3]], dim=2)]
+        return pts_aff
+
+    def get_affinities_non_uniform(self, pts):
         pts_aff = []
         pts_aff += [torch.cat([pts[:, :, 0:2], -pts[:, :, 2:3]], dim=2)]                # [x,y,-z]
         pts_aff += [torch.cat([-pts[:, :, 0:1],pts[:,:,1:3]], dim=2)]                   # [-x,y,z]
@@ -189,13 +200,16 @@ class SDFNet(nn.Module):
         pts_aff += [torch.cat([-pts[:, :, 0:1], pts[:, :, 1:2],-pts[:, :, 2:3]], dim=2)]# [-x,y,-z]
         return pts_aff
 
-    def modify_affinities(self, pts_aff, radius_offsets):
-        pts_aff[0] += radius_offsets[:, :, 0:3]
-        pts_aff[1] += radius_offsets[:, :, 3:6]
-        pts_aff[2] += radius_offsets[:, :, 6:9]
-        pts_aff[3] += radius_offsets[:, :, 9:12]
-        pts_aff[4] += radius_offsets[:, :, 12:15]
-        pts_aff[5] += radius_offsets[:, :, 15:18]
+    def get_affinities(self, pts):
+        return self.get_affinities_non_uniform(pts)
+
+    def modify_affinities(self, pts_aff, offsets):
+        pts_aff[0] += offsets[:, :, 0:3]
+        pts_aff[1] += offsets[:, :, 3:6]
+        pts_aff[2] += offsets[:, :, 6:9]
+        pts_aff[3] += offsets[:, :, 9:12]
+        pts_aff[4] += offsets[:, :, 12:15]
+        pts_aff[5] += offsets[:, :, 15:18]
         return pts_aff
 
     def forward(self, img, pts, trans_mat):
@@ -227,6 +241,7 @@ class SDFNet(nn.Module):
             pixs_ref += [camera_projection(torch.clamp(pts_aff[i], -1.0, 1.0), trans_mat)]
         _, localfeats_ref = self.get_local_image_features(featuremaps, [], pixs_ref)
 
+        # local feature aggregation
         sub_lf5 = self.agg_5(torch.cat([localfeats[5], localfeats_ref[5]], dim=1))
         sub_lf4 = self.agg_4(torch.cat([localfeats[4], localfeats_ref[4]], dim=1))
         sub_lf3 = self.agg_3(torch.cat([localfeats[3], localfeats_ref[3]], dim=1))
