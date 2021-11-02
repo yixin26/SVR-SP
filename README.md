@@ -39,7 +39,7 @@ The generated mesh files will be stored at  ```code/all/results/30/test_objs/...
 
 To train the model from scratch, please use
 ```bash
-python train.py --category all --exp all -g 0,1 --batch_size 30
+python train.py --category all --exp all -g 0,1 --batch_size 20 --nr_epochs 30
 ```
 
 #### Dataset preparation
