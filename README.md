@@ -6,7 +6,7 @@
 This repository contains the code for the paper "[Neural Implicit 3D Shapes from Single Images with Spatial Patterns](https://yixin26.github.io/projects/Spatial-Pattern/Spatial_Pattern.pdf)".
 
 
-<img src="./fig/illustration.png" width="700" />
+<img src="./fig/illustration.png" width="800" />
 
 
 ### Installation
