@@ -3,7 +3,7 @@
 
 ## Neural Implicit 3D Shapes from Single Images with Spatial Patterns
 
-This repository contains the code for the paper "[Neural Implicit 3D Shapes from Single Images with Spatial Patterns](https://yixin26.github.io/projects/Spatial-Pattern/Spatial-Pattern.pdf)".
+This repository contains the code for the paper "[Neural Implicit 3D Shapes from Single Images with Spatial Patterns](https://yixin26.github.io/projects/Spatial-Pattern/Spatial_Pattern.pdf)".
 
 
 <img src="./fig/illustration.png" width="700" />
@@ -26,7 +26,7 @@ Install via conda environment `conda env create -f environment.yml` (creates an 
 
 
 
-<img src="./fig/result.png" width="700" />
+<img src="./fig/result.png" width="800" />
 
 
 
@@ -54,7 +54,7 @@ During training, we use Furthest Point Sampling algorithm to downsample the inpu
 
 
 ### Visualization
-<img src="./fig/vis-sp.png" width="400" />
+<img src="./fig/vis-sp.png" width="600" />
 
 Please use the trained model to generate spatial patterns. The visualization codes and materials can be found at folder ```code/visualization/```.
 
