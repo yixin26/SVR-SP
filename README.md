@@ -3,11 +3,10 @@
 
 ## Neural Implicit 3D Shapes from Single Images with Spatial Patterns
 
-This repository provides PyTorch implementation of the work:
+This repository contains the code for the paper "[Neural Implicit 3D Shapes from Single Images with Spatial Patterns](https://yixin26.github.io/projects/Spatial-Pattern/Spatial-Pattern.pdf)".
 
-[Neural Implicit 3D Shapes from Single Images with Spatial Patterns](https://arxiv.org/pdf/2106.03087.pdf)
 
-<img src="./fig/result.png" width="700" />
+<img src="./fig/illustration.png" width="700" />
 
 
 ### Installation
@@ -24,6 +23,11 @@ cd SVR-SP & cd code
 
 #### Install dependencies
 Install via conda environment `conda env create -f environment.yml` (creates an environment called `spatial_pattern`)
+
+
+
+<img src="./fig/result.png" width="700" />
+
 
 
 ### Run
@@ -48,7 +52,9 @@ To generate meshes from predicted SDFs, we use the executable file from [isosurf
 
 During training, we use Furthest Point Sampling algorithm to downsample the input point cloud. Please download and compile the code from [sampling_cuda](https://github.com/daerduoCarey/pt2pc/tree/master/sampling).
 
+
 ### Visualization
+<img src="./fig/vis-sp.png" width="400" />
 
 Please use the trained model to generate spatial patterns. The visualization codes and materials can be found at folder ```code/visualization/```.
 
